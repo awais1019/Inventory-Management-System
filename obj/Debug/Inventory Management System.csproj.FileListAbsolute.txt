@@ -1,0 +1,14 @@
+D:\DB-Theory-Project\Inventory Management System\bin\Debug\Inventory Management System.exe.config
+D:\DB-Theory-Project\Inventory Management System\bin\Debug\Inventory Management System.exe
+D:\DB-Theory-Project\Inventory Management System\bin\Debug\Inventory Management System.pdb
+D:\DB-Theory-Project\Inventory Management System\bin\Debug\Bunifu_UI_v1.5.3.dll
+D:\DB-Theory-Project\Inventory Management System\bin\Debug\Guna.UI2.dll
+D:\DB-Theory-Project\Inventory Management System\bin\Debug\Bunifu_UI_v1.5.3.xml
+D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory Management System.csproj.AssemblyReference.cache
+D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory_Management_System.Form1.resources
+D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory_Management_System.Properties.Resources.resources
+D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory Management System.csproj.GenerateResource.cache
+D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory Management System.csproj.CoreCompileInputs.cache
+D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory Management System.csproj.CopyComplete
+D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory Management System.exe
+D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory Management System.pdb
