@@ -93,5 +93,10 @@ namespace Inventory_Management_System
             setMenu(new Manufacturer_Control(), "Manufacturers");
           
         }
+
+        private void dispatch_btn_Click(object sender, EventArgs e)
+        {
+            setMenu(new Dispatcher_Control(), "Dispatcher");
+        }
     }
 }

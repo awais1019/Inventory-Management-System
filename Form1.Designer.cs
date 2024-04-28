@@ -287,6 +287,7 @@
             this.dispatch_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.dispatch_btn.UseTransparentBackground = true;
             this.dispatch_btn.CheckedChanged += new System.EventHandler(this.btn_home_CheckedChanged);
+            this.dispatch_btn.Click += new System.EventHandler(this.dispatch_btn_Click);
             // 
             // manufacturer_btn
             // 

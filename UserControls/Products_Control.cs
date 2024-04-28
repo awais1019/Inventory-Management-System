@@ -24,7 +24,16 @@ namespace Inventory_Management_System.UserControls
 
         private void Add_Product_btn_Click(object sender, EventArgs e)
         {
- 
+            Add_Products add_Products = new Add_Products();
+            back_btn.Visible = true;
+            Add_Product_btn.Visible = false;
+            panel2.Controls.Clear();
+            add_Products.Dock = DockStyle.Fill;
+            searchbox.Visible = false;
+            Delete_Product.Visible = false;
+            panel2.Controls.Add(add_Products);
+   
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -60,6 +69,18 @@ namespace Inventory_Management_System.UserControls
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+            panel2.Controls.Add(GridProduct);
+            back_btn.Visible = false;
+            Add_Product_btn.Visible = true;
+            searchbox.Visible = true;
+            Delete_Product.Visible = true;
+           
+           
         }
     }
 }

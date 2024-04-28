@@ -15,3 +15,6 @@ D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory Management 
 D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory_Management_System.UserControls.Products_Control.resources
 D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory_Management_System.UserControls.Home_Control.resources
 D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory_Management_System.UserControls.Manufacturer_Control.resources
+D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory_Management_System.UserControls.Add_Products.resources
+D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory_Management_System.UserControls.Add_Manufacturer_Control.resources
+D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory_Management_System.Dispatcher_Control.resources
