@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace Inventory_Management_System.BL_Classes
 {
-    internal class ProductCategory
+    public class ProductCategory
     {
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
-        public int StorageID { get; set; }
+        public ProductCategory(int categoryId, string name) 
+        {
+            this.CategoryName = name;
+            this.CategoryID = categoryId;
+        }
     }
 }

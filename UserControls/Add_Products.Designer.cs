@@ -44,7 +44,7 @@
             this.sale_rate_txtbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.category_combo_box = new System.Windows.Forms.ComboBox();
-            this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
+            this.gunastyles = new Guna.UI2.WinForms.Guna2Shapes();
             this.product_txtbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +67,7 @@
             this.panel2.Controls.Add(this.sale_rate_txtbox);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.category_combo_box);
-            this.panel2.Controls.Add(this.guna2Shapes1);
+            this.panel2.Controls.Add(this.gunastyles);
             this.panel2.Controls.Add(this.product_txtbox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -313,20 +313,20 @@
             this.category_combo_box.Sorted = true;
             this.category_combo_box.TabIndex = 0;
             // 
-            // guna2Shapes1
+            // gunastyles
             // 
-            this.guna2Shapes1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Shapes1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            this.guna2Shapes1.LineThickness = 2;
-            this.guna2Shapes1.Location = new System.Drawing.Point(323, 85);
-            this.guna2Shapes1.Name = "guna2Shapes1";
-            this.guna2Shapes1.PolygonSkip = 1;
-            this.guna2Shapes1.Rotate = 0F;
-            this.guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
-            this.guna2Shapes1.Size = new System.Drawing.Size(351, 13);
-            this.guna2Shapes1.TabIndex = 16;
-            this.guna2Shapes1.Text = "guna2Shapes1";
-            this.guna2Shapes1.Zoom = 80;
+            this.gunastyles.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gunastyles.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.gunastyles.LineThickness = 2;
+            this.gunastyles.Location = new System.Drawing.Point(323, 85);
+            this.gunastyles.Name = "gunastyles";
+            this.gunastyles.PolygonSkip = 1;
+            this.gunastyles.Rotate = 0F;
+            this.gunastyles.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
+            this.gunastyles.Size = new System.Drawing.Size(351, 13);
+            this.gunastyles.TabIndex = 16;
+            this.gunastyles.Text = "guna2Shapes1";
+            this.gunastyles.Zoom = 80;
             // 
             // product_txtbox
             // 
@@ -384,7 +384,7 @@
         private Guna.UI2.WinForms.Guna2TextBox sale_rate_txtbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox category_combo_box;
-        private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
+        private Guna.UI2.WinForms.Guna2Shapes gunastyles;
         private Guna.UI2.WinForms.Guna2TextBox product_txtbox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox manufacturer_combo_box;

@@ -1,4 +1,5 @@
 ﻿using Inventory_Management_System.BL_Classes;
+using Inventory_Management_System.DL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,8 @@ namespace Inventory_Management_System.UserControls
         public Add_Products()
         {
             InitializeComponent();
+            setCategoryComboBox();
+            setManufacturerComboBox();
         }
 
         public void clearfieldes()
@@ -70,8 +73,33 @@ namespace Inventory_Management_System.UserControls
             return null;
         }
 
+        private void setCategoryComboBox()
+        {
+            //CategoryDL.getCategoryFromDB(); // Fetch categories from the database
+            category_combo_box.DataSource = CategoryDL.categories; // Set the data source to the categories list
+            category_combo_box.DisplayMember = "CategoryName"; // Specify the property to display for each item
+            category_combo_box.ValueMember = "CategoryID"; 
+        }
+        private void setManufacturerComboBox()
+        {
+            manufacturer_combo_box.DataSource = ManufacturerDL.manufacturers;
+            manufacturer_combo_box.DisplayMember = "CompanyName"; 
+            manufacturer_combo_box.ValueMember = "ManufacturerId";
+        }
         private void Add_btn_Click(object sender, EventArgs e)
         {
+            string productName = product_txtbox.Text;
+            string purchaseRate = prate_txtbox.Text;
+            string sellRate = sale_rate_txtbox.Text;
+            string quantity = quantity_txtbox.Text;
+            int CategoryId = (int)category_combo_box.SelectedValue;
+            int manufacturerId = (int)manufacturer_combo_box.SelectedValue;
+            if (productName != null  && purchaseRate != null && sellRate != null && quantity != null)
+            {
+                Product p = new Product(manufacturerId, productName, CategoryId, CategoryId, decimal.Parse(purchaseRate), decimal.Parse(sellRate), int.Parse(quantity), 30, DateTime.Now);
+                ProductDL.addIntoList(p);
+                ProductDL.addIntoDB(p);
+            }
 
         }
     }

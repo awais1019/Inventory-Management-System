@@ -37,3 +37,22 @@ D:\Fourth Semster\Database\Theory\Final_Project\Inventory-Management-System\bin\
 D:\Fourth Semster\Database\Theory\Final_Project\Inventory-Management-System\bin\Debug\Guna.UI2.dll
 D:\Fourth Semster\Database\Theory\Final_Project\Inventory-Management-System\bin\Debug\Bunifu_UI_v1.5.3.xml
 D:\Fourth Semster\Database\Theory\Final_Project\Inventory-Management-System\obj\Debug\Inventory Management System.csproj.CopyComplete
+D:\DataBase\Inventory-Management-System\bin\Debug\Inventory Management System.exe.config
+D:\DataBase\Inventory-Management-System\bin\Debug\Inventory Management System.exe
+D:\DataBase\Inventory-Management-System\bin\Debug\Inventory Management System.pdb
+D:\DataBase\Inventory-Management-System\bin\Debug\Guna.UI2.dll
+D:\DataBase\Inventory-Management-System\bin\Debug\Bunifu_UI_v1.5.3.xml
+D:\DataBase\Inventory-Management-System\obj\Debug\Inventory Management System.csproj.AssemblyReference.cache
+D:\DataBase\Inventory-Management-System\obj\Debug\Inventory_Management_System.Dispatcher_Control.resources
+D:\DataBase\Inventory-Management-System\obj\Debug\Inventory_Management_System.Form1.resources
+D:\DataBase\Inventory-Management-System\obj\Debug\Inventory_Management_System.Properties.Resources.resources
+D:\DataBase\Inventory-Management-System\obj\Debug\Inventory_Management_System.UserControls.Add_Manufacturer_Control.resources
+D:\DataBase\Inventory-Management-System\obj\Debug\Inventory_Management_System.UserControls.Add_Products.resources
+D:\DataBase\Inventory-Management-System\obj\Debug\Inventory_Management_System.UserControls.Home_Control.resources
+D:\DataBase\Inventory-Management-System\obj\Debug\Inventory_Management_System.UserControls.Manufacturer_Control.resources
+D:\DataBase\Inventory-Management-System\obj\Debug\Inventory_Management_System.UserControls.Products_Control.resources
+D:\DataBase\Inventory-Management-System\obj\Debug\Inventory Management System.csproj.GenerateResource.cache
+D:\DataBase\Inventory-Management-System\obj\Debug\Inventory Management System.csproj.CoreCompileInputs.cache
+D:\DataBase\Inventory-Management-System\obj\Debug\Inventory Management System.csproj.CopyComplete
+D:\DataBase\Inventory-Management-System\obj\Debug\Inventory Management System.exe
+D:\DataBase\Inventory-Management-System\obj\Debug\Inventory Management System.pdb

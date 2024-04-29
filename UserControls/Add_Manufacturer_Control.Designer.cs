@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.Add_btn = new Guna.UI2.WinForms.Guna2Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Shapes4 = new Guna.UI2.WinForms.Guna2Shapes();
             this.phone_txtbox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -40,7 +39,6 @@
             this.guna2Shapes2 = new Guna.UI2.WinForms.Guna2Shapes();
             this.email_box = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.category_combo_box = new System.Windows.Forms.ComboBox();
             this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
             this.Manufacturer_txtbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -65,18 +63,7 @@
             this.Add_btn.Size = new System.Drawing.Size(180, 45);
             this.Add_btn.TabIndex = 30;
             this.Add_btn.Text = "Add";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            this.label6.Location = new System.Drawing.Point(121, 409);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(122, 28);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "Category";
+            this.Add_btn.Click += new System.EventHandler(this.Add_btn_Click);
             // 
             // label4
             // 
@@ -252,16 +239,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Name";
             // 
-            // category_combo_box
-            // 
-            this.category_combo_box.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.category_combo_box.FormattingEnabled = true;
-            this.category_combo_box.Location = new System.Drawing.Point(355, 413);
-            this.category_combo_box.Name = "category_combo_box";
-            this.category_combo_box.Size = new System.Drawing.Size(283, 28);
-            this.category_combo_box.Sorted = true;
-            this.category_combo_box.TabIndex = 0;
-            // 
             // guna2Shapes1
             // 
             this.guna2Shapes1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -308,7 +285,6 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.Add_btn);
-            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.guna2Shapes4);
             this.panel2.Controls.Add(this.phone_txtbox);
@@ -319,7 +295,6 @@
             this.panel2.Controls.Add(this.guna2Shapes2);
             this.panel2.Controls.Add(this.email_box);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.category_combo_box);
             this.panel2.Controls.Add(this.guna2Shapes1);
             this.panel2.Controls.Add(this.Manufacturer_txtbox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -344,7 +319,6 @@
 
         #endregion
         private Guna.UI2.WinForms.Guna2Button Add_btn;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes4;
         private Guna.UI2.WinForms.Guna2TextBox phone_txtbox;
@@ -355,7 +329,6 @@
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes2;
         private Guna.UI2.WinForms.Guna2TextBox email_box;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox category_combo_box;
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
         private Guna.UI2.WinForms.Guna2TextBox Manufacturer_txtbox;
         private System.Windows.Forms.Panel panel2;

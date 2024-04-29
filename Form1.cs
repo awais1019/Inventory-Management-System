@@ -1,4 +1,6 @@
 ﻿using Guna.UI2.WinForms;
+using Inventory_Management_System.BL_Classes;
+using Inventory_Management_System.DL;
 using Inventory_Management_System.UserControls;
 using System;
 using System.Collections.Generic;
@@ -17,7 +19,13 @@ namespace Inventory_Management_System
         public Form1()
         {
             InitializeComponent();
+            DatabaseManager.openConnection();
+            ManufacturerDL.loadDataIntoList();
+           // MessageBox.Show(ManufacturerDL.getManufacturer(1).CompanyName.ToString());
+            CategoryDL.getCategoryFromDB();
+            ProductDL.loadDataIntoList();
         }
+        
         private void moveImageBox(object sender)
         {
             Guna2Button b = (Guna2Button)sender;

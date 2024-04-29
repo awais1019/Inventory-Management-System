@@ -41,16 +41,17 @@
             this.Add_Product_btn = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.GridProduct = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status_bar_panel = new System.Windows.Forms.Panel();
             this.count_students_label = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.ProductCheckbox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PurchaseRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SellRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductManufacturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridProduct)).BeginInit();
@@ -196,13 +197,14 @@
             this.GridProduct.ColumnHeadersHeight = 50;
             this.GridProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.GridProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column7,
-            this.Column5,
-            this.Column6});
+            this.ProductCheckbox,
+            this.ProductId,
+            this.ProductName,
+            this.PurchaseRate,
+            this.SellRate,
+            this.ProductQuantity,
+            this.ProductCategory,
+            this.ProductManufacturer});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -218,7 +220,6 @@
             this.GridProduct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GridProduct.MultiSelect = false;
             this.GridProduct.Name = "GridProduct";
-            this.GridProduct.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -246,7 +247,7 @@
             this.GridProduct.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.GridProduct.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.GridProduct.ThemeStyle.HeaderStyle.Height = 50;
-            this.GridProduct.ThemeStyle.ReadOnly = true;
+            this.GridProduct.ThemeStyle.ReadOnly = false;
             this.GridProduct.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.GridProduct.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.GridProduct.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -254,74 +255,6 @@
             this.GridProduct.ThemeStyle.RowsStyle.Height = 25;
             this.GridProduct.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.Gray;
             this.GridProduct.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = false;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column1.FillWeight = 0.03353107F;
-            this.Column1.HeaderText = "";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 30;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 160.0426F;
-            this.Column2.HeaderText = "Name";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 160.2921F;
-            this.Column3.HeaderText = "Purchase Rate";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 160.192F;
-            this.Column4.HeaderText = "Sell Rate";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column7
-            // 
-            this.Column7.FillWeight = 160.1819F;
-            this.Column7.HeaderText = "Quantity";
-            this.Column7.MinimumWidth = 8;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 160.6189F;
-            this.Column5.HeaderText = "Category";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column6
-            // 
-            this.Column6.FillWeight = 160.6391F;
-            this.Column6.HeaderText = "Manufacturer";
-            this.Column6.MinimumWidth = 8;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // status_bar_panel
             // 
@@ -361,6 +294,74 @@
             this.label7.Text = "Total Products:";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // ProductCheckbox
+            // 
+            this.ProductCheckbox.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = false;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductCheckbox.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ProductCheckbox.FillWeight = 0.03353107F;
+            this.ProductCheckbox.HeaderText = "";
+            this.ProductCheckbox.MinimumWidth = 8;
+            this.ProductCheckbox.Name = "ProductCheckbox";
+            this.ProductCheckbox.Width = 30;
+            // 
+            // ProductId
+            // 
+            this.ProductId.HeaderText = "Column1";
+            this.ProductId.MinimumWidth = 8;
+            this.ProductId.Name = "ProductId";
+            this.ProductId.Visible = false;
+            // 
+            // ProductName
+            // 
+            this.ProductName.FillWeight = 160.0426F;
+            this.ProductName.HeaderText = "Name";
+            this.ProductName.MinimumWidth = 8;
+            this.ProductName.Name = "ProductName";
+            this.ProductName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // PurchaseRate
+            // 
+            this.PurchaseRate.FillWeight = 160.2921F;
+            this.PurchaseRate.HeaderText = "Purchase Rate";
+            this.PurchaseRate.MinimumWidth = 8;
+            this.PurchaseRate.Name = "PurchaseRate";
+            this.PurchaseRate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // SellRate
+            // 
+            this.SellRate.FillWeight = 160.192F;
+            this.SellRate.HeaderText = "Sell Rate";
+            this.SellRate.MinimumWidth = 8;
+            this.SellRate.Name = "SellRate";
+            this.SellRate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ProductQuantity
+            // 
+            this.ProductQuantity.FillWeight = 160.1819F;
+            this.ProductQuantity.HeaderText = "Quantity";
+            this.ProductQuantity.MinimumWidth = 8;
+            this.ProductQuantity.Name = "ProductQuantity";
+            this.ProductQuantity.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ProductCategory
+            // 
+            this.ProductCategory.FillWeight = 160.6189F;
+            this.ProductCategory.HeaderText = "Category";
+            this.ProductCategory.MinimumWidth = 8;
+            this.ProductCategory.Name = "ProductCategory";
+            this.ProductCategory.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ProductManufacturer
+            // 
+            this.ProductManufacturer.FillWeight = 160.6391F;
+            this.ProductManufacturer.HeaderText = "Manufacturer";
+            this.ProductManufacturer.MinimumWidth = 8;
+            this.ProductManufacturer.Name = "ProductManufacturer";
+            this.ProductManufacturer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
             // Products_Control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -392,12 +393,13 @@
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2TextBox searchbox;
         private Guna.UI2.WinForms.Guna2Button back_btn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ProductCheckbox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PurchaseRate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SellRate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductManufacturer;
     }
 }
