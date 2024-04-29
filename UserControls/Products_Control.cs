@@ -61,10 +61,7 @@ namespace Inventory_Management_System.UserControls
 
         }
 
-        private void GridAttendance_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+      
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {

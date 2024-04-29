@@ -56,6 +56,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL_Classes\Dispatch.cs" />
+    <Compile Include="BL_Classes\DispatchDetail.cs" />
+    <Compile Include="BL_Classes\Manufacturer.cs" />
+    <Compile Include="BL_Classes\Product.cs" />
+    <Compile Include="BL_Classes\ProductCategory.cs" />
+    <Compile Include="BL_Classes\ProductMovement.cs" />
+    <Compile Include="BL_Classes\Storage.cs" />
+    <Compile Include="BL_Classes\Transportation.cs" />
     <Compile Include="Dispatcher_Control.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -74,7 +74,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(834, 540);
             this.panel2.TabIndex = 18;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label7
             // 
@@ -87,7 +86,6 @@
             this.label7.Size = new System.Drawing.Size(168, 28);
             this.label7.TabIndex = 32;
             this.label7.Text = "Manufacturer";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // manufacturer_combo_box
             // 
@@ -98,7 +96,6 @@
             this.manufacturer_combo_box.Size = new System.Drawing.Size(283, 28);
             this.manufacturer_combo_box.Sorted = true;
             this.manufacturer_combo_box.TabIndex = 31;
-            this.manufacturer_combo_box.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Add_btn
             // 
@@ -131,7 +128,6 @@
             this.label6.Size = new System.Drawing.Size(122, 28);
             this.label6.TabIndex = 29;
             this.label6.Text = "Category";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -144,7 +140,6 @@
             this.label5.Size = new System.Drawing.Size(110, 28);
             this.label5.TabIndex = 26;
             this.label5.Text = "Quantity";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // guna2Shapes5
             // 
@@ -160,7 +155,6 @@
             this.guna2Shapes5.TabIndex = 28;
             this.guna2Shapes5.Text = "guna2Shapes5";
             this.guna2Shapes5.Zoom = 80;
-            this.guna2Shapes5.Click += new System.EventHandler(this.guna2Shapes5_Click);
             // 
             // quantity_txtbox
             // 
@@ -188,7 +182,6 @@
             this.quantity_txtbox.Size = new System.Drawing.Size(307, 29);
             this.quantity_txtbox.TabIndex = 27;
             this.quantity_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.quantity_txtbox.TextChanged += new System.EventHandler(this.contact_txt_TextChanged);
             // 
             // label4
             // 
@@ -201,7 +194,6 @@
             this.label4.Size = new System.Drawing.Size(177, 28);
             this.label4.TabIndex = 23;
             this.label4.Text = "Purchase Rate";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // guna2Shapes4
             // 
@@ -217,7 +209,6 @@
             this.guna2Shapes4.TabIndex = 25;
             this.guna2Shapes4.Text = "guna2Shapes4";
             this.guna2Shapes4.Zoom = 80;
-            this.guna2Shapes4.Click += new System.EventHandler(this.guna2Shapes4_Click);
             // 
             // prate_txtbox
             // 
@@ -245,7 +236,6 @@
             this.prate_txtbox.Size = new System.Drawing.Size(307, 29);
             this.prate_txtbox.TabIndex = 24;
             this.prate_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.prate_txtbox.TextChanged += new System.EventHandler(this.reg_txtbox_TextChanged);
             // 
             // label3
             // 
@@ -258,7 +248,6 @@
             this.label3.Size = new System.Drawing.Size(110, 28);
             this.label3.TabIndex = 20;
             this.label3.Text = "Sell Rate";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // guna2Shapes3
             // 
@@ -274,7 +263,6 @@
             this.guna2Shapes3.TabIndex = 22;
             this.guna2Shapes3.Text = "guna2Shapes3";
             this.guna2Shapes3.Zoom = 80;
-            this.guna2Shapes3.Click += new System.EventHandler(this.guna2Shapes3_Click);
             // 
             // sale_rate_txtbox
             // 
@@ -302,7 +290,6 @@
             this.sale_rate_txtbox.Size = new System.Drawing.Size(307, 29);
             this.sale_rate_txtbox.TabIndex = 21;
             this.sale_rate_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.sale_rate_txtbox.TextChanged += new System.EventHandler(this.email_txtbox_TextChanged);
             // 
             // label1
             // 
@@ -315,7 +302,6 @@
             this.label1.Size = new System.Drawing.Size(84, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "Name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // category_combo_box
             // 
@@ -326,7 +312,6 @@
             this.category_combo_box.Size = new System.Drawing.Size(283, 28);
             this.category_combo_box.Sorted = true;
             this.category_combo_box.TabIndex = 0;
-            this.category_combo_box.SelectedIndexChanged += new System.EventHandler(this.status_combo_box_SelectedIndexChanged);
             // 
             // guna2Shapes1
             // 
@@ -342,7 +327,6 @@
             this.guna2Shapes1.TabIndex = 16;
             this.guna2Shapes1.Text = "guna2Shapes1";
             this.guna2Shapes1.Zoom = 80;
-            this.guna2Shapes1.Click += new System.EventHandler(this.guna2Shapes1_Click);
             // 
             // product_txtbox
             // 
@@ -370,7 +354,6 @@
             this.product_txtbox.Size = new System.Drawing.Size(307, 29);
             this.product_txtbox.TabIndex = 15;
             this.product_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.product_txtbox.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // Add_Products
             // 

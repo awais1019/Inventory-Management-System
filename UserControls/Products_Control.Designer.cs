@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Products_Control));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Products_Control));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.back_btn = new Guna.UI2.WinForms.Guna2Button();
+            this.searchbox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Delete_Product = new Guna.UI2.WinForms.Guna2Button();
+            this.Add_Product_btn = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.GridProduct = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.status_bar_panel = new System.Windows.Forms.Panel();
-            this.count_students_label = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,10 +48,9 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.back_btn = new Guna.UI2.WinForms.Guna2Button();
-            this.searchbox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Delete_Product = new Guna.UI2.WinForms.Guna2Button();
-            this.Add_Product_btn = new Guna.UI2.WinForms.Guna2Button();
+            this.status_bar_panel = new System.Windows.Forms.Panel();
+            this.count_students_label = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridProduct)).BeginInit();
@@ -70,6 +70,93 @@
             this.panel1.Size = new System.Drawing.Size(834, 62);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // back_btn
+            // 
+            this.back_btn.BorderRadius = 5;
+            this.back_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.back_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.back_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.back_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.back_btn.FillColor = System.Drawing.Color.White;
+            this.back_btn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.back_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.back_btn.Image = ((System.Drawing.Image)(resources.GetObject("back_btn.Image")));
+            this.back_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.back_btn.Location = new System.Drawing.Point(13, 13);
+            this.back_btn.Name = "back_btn";
+            this.back_btn.Size = new System.Drawing.Size(159, 41);
+            this.back_btn.TabIndex = 62;
+            this.back_btn.Text = "Back";
+            this.back_btn.Visible = false;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
+            // 
+            // searchbox
+            // 
+            this.searchbox.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.searchbox.BorderThickness = 2;
+            this.searchbox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchbox.DefaultText = "";
+            this.searchbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.searchbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.searchbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchbox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.searchbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchbox.IconLeft = ((System.Drawing.Image)(resources.GetObject("searchbox.IconLeft")));
+            this.searchbox.IconLeftOffset = new System.Drawing.Point(8, 0);
+            this.searchbox.IconLeftSize = new System.Drawing.Size(18, 18);
+            this.searchbox.Location = new System.Drawing.Point(645, 11);
+            this.searchbox.Margin = new System.Windows.Forms.Padding(7, 9, 7, 9);
+            this.searchbox.Name = "searchbox";
+            this.searchbox.PasswordChar = '\0';
+            this.searchbox.PlaceholderText = "Search";
+            this.searchbox.SelectedText = "";
+            this.searchbox.Size = new System.Drawing.Size(189, 41);
+            this.searchbox.TabIndex = 61;
+            this.searchbox.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            // 
+            // Delete_Product
+            // 
+            this.Delete_Product.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Delete_Product.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Delete_Product.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Delete_Product.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Delete_Product.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Delete_Product.FillColor = System.Drawing.Color.White;
+            this.Delete_Product.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Delete_Product.ForeColor = System.Drawing.Color.Black;
+            this.Delete_Product.Image = ((System.Drawing.Image)(resources.GetObject("Delete_Product.Image")));
+            this.Delete_Product.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Delete_Product.ImageSize = new System.Drawing.Size(18, 18);
+            this.Delete_Product.Location = new System.Drawing.Point(169, 17);
+            this.Delete_Product.Name = "Delete_Product";
+            this.Delete_Product.Size = new System.Drawing.Size(171, 37);
+            this.Delete_Product.TabIndex = 60;
+            this.Delete_Product.Text = "Delete Product";
+            this.Delete_Product.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Delete_Product.Click += new System.EventHandler(this.Delete_Product_Click);
+            // 
+            // Add_Product_btn
+            // 
+            this.Add_Product_btn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Add_Product_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Add_Product_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Add_Product_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Add_Product_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Add_Product_btn.FillColor = System.Drawing.Color.White;
+            this.Add_Product_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Add_Product_btn.ForeColor = System.Drawing.Color.Black;
+            this.Add_Product_btn.Image = ((System.Drawing.Image)(resources.GetObject("Add_Product_btn.Image")));
+            this.Add_Product_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Add_Product_btn.Location = new System.Drawing.Point(3, 15);
+            this.Add_Product_btn.Name = "Add_Product_btn";
+            this.Add_Product_btn.Size = new System.Drawing.Size(160, 37);
+            this.Add_Product_btn.TabIndex = 59;
+            this.Add_Product_btn.Text = "Add Product";
+            this.Add_Product_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Add_Product_btn.Click += new System.EventHandler(this.Add_Product_btn_Click);
             // 
             // panel2
             // 
@@ -167,45 +254,6 @@
             this.GridProduct.ThemeStyle.RowsStyle.Height = 25;
             this.GridProduct.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.Gray;
             this.GridProduct.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.GridProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridAttendance_CellContentClick);
-            // 
-            // status_bar_panel
-            // 
-            this.status_bar_panel.BackColor = System.Drawing.Color.Transparent;
-            this.status_bar_panel.Controls.Add(this.count_students_label);
-            this.status_bar_panel.Controls.Add(this.label7);
-            this.status_bar_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.status_bar_panel.Location = new System.Drawing.Point(0, 577);
-            this.status_bar_panel.Name = "status_bar_panel";
-            this.status_bar_panel.Size = new System.Drawing.Size(834, 25);
-            this.status_bar_panel.TabIndex = 56;
-            this.status_bar_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.status_bar_panel_Paint);
-            // 
-            // count_students_label
-            // 
-            this.count_students_label.AutoSize = true;
-            this.count_students_label.Dock = System.Windows.Forms.DockStyle.Left;
-            this.count_students_label.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.count_students_label.ForeColor = System.Drawing.Color.Black;
-            this.count_students_label.Location = new System.Drawing.Point(118, 0);
-            this.count_students_label.Name = "count_students_label";
-            this.count_students_label.Size = new System.Drawing.Size(18, 19);
-            this.count_students_label.TabIndex = 9;
-            this.count_students_label.Text = "0";
-            this.count_students_label.Click += new System.EventHandler(this.count_students_label_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(0, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(118, 19);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Total Products:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // Column1
             // 
@@ -275,92 +323,43 @@
             this.Column6.ReadOnly = true;
             this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // back_btn
+            // status_bar_panel
             // 
-            this.back_btn.BorderRadius = 5;
-            this.back_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.back_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.back_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.back_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.back_btn.FillColor = System.Drawing.Color.White;
-            this.back_btn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.back_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            this.back_btn.Image = ((System.Drawing.Image)(resources.GetObject("back_btn.Image")));
-            this.back_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.back_btn.Location = new System.Drawing.Point(13, 13);
-            this.back_btn.Name = "back_btn";
-            this.back_btn.Size = new System.Drawing.Size(159, 41);
-            this.back_btn.TabIndex = 62;
-            this.back_btn.Text = "Back";
-            this.back_btn.Visible = false;
-            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
+            this.status_bar_panel.BackColor = System.Drawing.Color.Transparent;
+            this.status_bar_panel.Controls.Add(this.count_students_label);
+            this.status_bar_panel.Controls.Add(this.label7);
+            this.status_bar_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.status_bar_panel.Location = new System.Drawing.Point(0, 577);
+            this.status_bar_panel.Name = "status_bar_panel";
+            this.status_bar_panel.Size = new System.Drawing.Size(834, 25);
+            this.status_bar_panel.TabIndex = 56;
+            this.status_bar_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.status_bar_panel_Paint);
             // 
-            // searchbox
+            // count_students_label
             // 
-            this.searchbox.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.searchbox.BorderThickness = 2;
-            this.searchbox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.searchbox.DefaultText = "";
-            this.searchbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.searchbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.searchbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.searchbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.searchbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.searchbox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.searchbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.searchbox.IconLeft = ((System.Drawing.Image)(resources.GetObject("searchbox.IconLeft")));
-            this.searchbox.IconLeftOffset = new System.Drawing.Point(8, 0);
-            this.searchbox.IconLeftSize = new System.Drawing.Size(18, 18);
-            this.searchbox.Location = new System.Drawing.Point(645, 11);
-            this.searchbox.Margin = new System.Windows.Forms.Padding(7, 9, 7, 9);
-            this.searchbox.Name = "searchbox";
-            this.searchbox.PasswordChar = '\0';
-            this.searchbox.PlaceholderText = "Search";
-            this.searchbox.SelectedText = "";
-            this.searchbox.Size = new System.Drawing.Size(189, 41);
-            this.searchbox.TabIndex = 61;
-            this.searchbox.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            this.count_students_label.AutoSize = true;
+            this.count_students_label.Dock = System.Windows.Forms.DockStyle.Left;
+            this.count_students_label.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.count_students_label.ForeColor = System.Drawing.Color.Black;
+            this.count_students_label.Location = new System.Drawing.Point(118, 0);
+            this.count_students_label.Name = "count_students_label";
+            this.count_students_label.Size = new System.Drawing.Size(18, 19);
+            this.count_students_label.TabIndex = 9;
+            this.count_students_label.Text = "0";
+            this.count_students_label.Click += new System.EventHandler(this.count_students_label_Click);
             // 
-            // Delete_Product
+            // label7
             // 
-            this.Delete_Product.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Delete_Product.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Delete_Product.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Delete_Product.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Delete_Product.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Delete_Product.FillColor = System.Drawing.Color.White;
-            this.Delete_Product.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Delete_Product.ForeColor = System.Drawing.Color.Black;
-            this.Delete_Product.Image = ((System.Drawing.Image)(resources.GetObject("Delete_Product.Image")));
-            this.Delete_Product.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Delete_Product.ImageSize = new System.Drawing.Size(18, 18);
-            this.Delete_Product.Location = new System.Drawing.Point(169, 17);
-            this.Delete_Product.Name = "Delete_Product";
-            this.Delete_Product.Size = new System.Drawing.Size(171, 37);
-            this.Delete_Product.TabIndex = 60;
-            this.Delete_Product.Text = "Delete Product";
-            this.Delete_Product.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Delete_Product.Click += new System.EventHandler(this.Delete_Product_Click);
-            // 
-            // Add_Product_btn
-            // 
-            this.Add_Product_btn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Add_Product_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Add_Product_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Add_Product_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Add_Product_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Add_Product_btn.FillColor = System.Drawing.Color.White;
-            this.Add_Product_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Add_Product_btn.ForeColor = System.Drawing.Color.Black;
-            this.Add_Product_btn.Image = ((System.Drawing.Image)(resources.GetObject("Add_Product_btn.Image")));
-            this.Add_Product_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Add_Product_btn.Location = new System.Drawing.Point(3, 15);
-            this.Add_Product_btn.Name = "Add_Product_btn";
-            this.Add_Product_btn.Size = new System.Drawing.Size(160, 37);
-            this.Add_Product_btn.TabIndex = 59;
-            this.Add_Product_btn.Text = "Add Product";
-            this.Add_Product_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Add_Product_btn.Click += new System.EventHandler(this.Add_Product_btn_Click);
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(118, 19);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Total Products:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // Products_Control
             // 
