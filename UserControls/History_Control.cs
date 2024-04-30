@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Inventory_Management_System
+namespace Inventory_Management_System.UserControls
 {
-    public partial class Dispatcher_Control : UserControl
+    public partial class History_Control : UserControl
     {
-        public Dispatcher_Control()
+        public History_Control()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

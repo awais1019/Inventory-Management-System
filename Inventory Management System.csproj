@@ -65,10 +65,10 @@
     <Compile Include="BL_Classes\ProductMovement.cs" />
     <Compile Include="BL_Classes\Storage.cs" />
     <Compile Include="BL_Classes\Transportation.cs" />
-    <Compile Include="Dispatcher_Control.cs">
+    <Compile Include="UserControls\Dispatcher_Control.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Dispatcher_Control.Designer.cs">
+    <Compile Include="UserControls\Dispatcher_Control.Designer.cs">
       <DependentUpon>Dispatcher_Control.cs</DependentUpon>
     </Compile>
     <Compile Include="DL\CategoryDL.cs" />
@@ -82,6 +82,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\Add_Block_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Add_Block_Control.Designer.cs">
+      <DependentUpon>Add_Block_Control.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Add_Manufacturer_Control.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -93,6 +99,24 @@
     </Compile>
     <Compile Include="UserControls\Add_Products.Designer.cs">
       <DependentUpon>Add_Products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Add_Shelf_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Add_Shelf_Control.Designer.cs">
+      <DependentUpon>Add_Shelf_Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Cart_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Cart_Control.Designer.cs">
+      <DependentUpon>Cart_Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\History_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\History_Control.Designer.cs">
+      <DependentUpon>History_Control.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Home_Control.cs">
       <SubType>UserControl</SubType>
@@ -112,7 +136,19 @@
     <Compile Include="UserControls\Products_Control.Designer.cs">
       <DependentUpon>Products_Control.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Dispatcher_Control.resx">
+    <Compile Include="UserControls\Storage_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Storage_Control.Designer.cs">
+      <DependentUpon>Storage_Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Transportation_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Transportation_Control.Designer.cs">
+      <DependentUpon>Transportation_Control.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserControls\Dispatcher_Control.resx">
       <DependentUpon>Dispatcher_Control.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
@@ -128,11 +164,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\Add_Block_Control.resx">
+      <DependentUpon>Add_Block_Control.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Add_Manufacturer_Control.resx">
       <DependentUpon>Add_Manufacturer_Control.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Add_Products.resx">
       <DependentUpon>Add_Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Add_Shelf_Control.resx">
+      <DependentUpon>Add_Shelf_Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Cart_Control.resx">
+      <DependentUpon>Cart_Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\History_Control.resx">
+      <DependentUpon>History_Control.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Home_Control.resx">
       <DependentUpon>Home_Control.cs</DependentUpon>
@@ -142,6 +190,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Products_Control.resx">
       <DependentUpon>Products_Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Storage_Control.resx">
+      <DependentUpon>Storage_Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Transportation_Control.resx">
+      <DependentUpon>Transportation_Control.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -40,6 +40,7 @@
             this.minimize_btn = new Guna.UI2.WinForms.Guna2Button();
             this.maximize_btn = new Guna.UI2.WinForms.Guna2Button();
             this.close_btn = new Guna.UI2.WinForms.Guna2Button();
+            this.storage_btn = new Guna.UI2.WinForms.Guna2Button();
             this.btn_close = new Guna.UI2.WinForms.Guna2Button();
             this.sidepicture = new System.Windows.Forms.PictureBox();
             this.History_btn = new Guna.UI2.WinForms.Guna2Button();
@@ -86,6 +87,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.panel2.Controls.Add(this.storage_btn);
             this.panel2.Controls.Add(this.btn_close);
             this.panel2.Controls.Add(this.sidepicture);
             this.panel2.Controls.Add(this.History_btn);
@@ -202,6 +204,35 @@
             this.close_btn.UseTransparentBackground = true;
             this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
             // 
+            // storage_btn
+            // 
+            this.storage_btn.BackColor = System.Drawing.Color.Transparent;
+            this.storage_btn.BorderColor = System.Drawing.Color.White;
+            this.storage_btn.BorderRadius = 25;
+            this.storage_btn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.storage_btn.CheckedState.FillColor = System.Drawing.Color.White;
+            this.storage_btn.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.storage_btn.CheckedState.Image = global::Inventory_Management_System.Properties.Resources.icons8_products_64__3_;
+            this.storage_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.storage_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.storage_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.storage_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.storage_btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.storage_btn.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.storage_btn.ForeColor = System.Drawing.Color.White;
+            this.storage_btn.Image = global::Inventory_Management_System.Properties.Resources.icons8_products_64__4_;
+            this.storage_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.storage_btn.ImageSize = new System.Drawing.Size(25, 25);
+            this.storage_btn.Location = new System.Drawing.Point(25, 198);
+            this.storage_btn.Name = "storage_btn";
+            this.storage_btn.Size = new System.Drawing.Size(149, 43);
+            this.storage_btn.TabIndex = 8;
+            this.storage_btn.Text = "Storage";
+            this.storage_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.storage_btn.UseTransparentBackground = true;
+            this.storage_btn.CheckedChanged += new System.EventHandler(this.storage_btn_CheckedChanged);
+            this.storage_btn.Click += new System.EventHandler(this.storage_btn_Click);
+            // 
             // btn_close
             // 
             this.btn_close.BorderColor = System.Drawing.Color.White;
@@ -251,14 +282,15 @@
             this.History_btn.Image = global::Inventory_Management_System.Properties.Resources.icons8_records_64__2_;
             this.History_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.History_btn.ImageSize = new System.Drawing.Size(25, 25);
-            this.History_btn.Location = new System.Drawing.Point(31, 436);
+            this.History_btn.Location = new System.Drawing.Point(26, 493);
             this.History_btn.Name = "History_btn";
             this.History_btn.Size = new System.Drawing.Size(149, 43);
             this.History_btn.TabIndex = 7;
             this.History_btn.Text = "History";
             this.History_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.History_btn.UseTransparentBackground = true;
-            this.History_btn.CheckedChanged += new System.EventHandler(this.btn_home_CheckedChanged);
+            this.History_btn.CheckedChanged += new System.EventHandler(this.storage_btn_CheckedChanged);
+            this.History_btn.Click += new System.EventHandler(this.History_btn_Click);
             // 
             // dispatch_btn
             // 
@@ -279,14 +311,14 @@
             this.dispatch_btn.Image = global::Inventory_Management_System.Properties.Resources.icons8_in_transit_64__2_;
             this.dispatch_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.dispatch_btn.ImageSize = new System.Drawing.Size(25, 25);
-            this.dispatch_btn.Location = new System.Drawing.Point(30, 360);
+            this.dispatch_btn.Location = new System.Drawing.Point(25, 417);
             this.dispatch_btn.Name = "dispatch_btn";
             this.dispatch_btn.Size = new System.Drawing.Size(149, 43);
             this.dispatch_btn.TabIndex = 5;
             this.dispatch_btn.Text = "Dispatcher";
             this.dispatch_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.dispatch_btn.UseTransparentBackground = true;
-            this.dispatch_btn.CheckedChanged += new System.EventHandler(this.btn_home_CheckedChanged);
+            this.dispatch_btn.CheckedChanged += new System.EventHandler(this.storage_btn_CheckedChanged);
             this.dispatch_btn.Click += new System.EventHandler(this.dispatch_btn_Click);
             // 
             // manufacturer_btn
@@ -307,14 +339,14 @@
             this.manufacturer_btn.ForeColor = System.Drawing.Color.White;
             this.manufacturer_btn.Image = ((System.Drawing.Image)(resources.GetObject("manufacturer_btn.Image")));
             this.manufacturer_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.manufacturer_btn.Location = new System.Drawing.Point(30, 283);
+            this.manufacturer_btn.Location = new System.Drawing.Point(25, 347);
             this.manufacturer_btn.Name = "manufacturer_btn";
             this.manufacturer_btn.Size = new System.Drawing.Size(149, 43);
             this.manufacturer_btn.TabIndex = 4;
             this.manufacturer_btn.Text = "Manufacturer";
             this.manufacturer_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.manufacturer_btn.UseTransparentBackground = true;
-            this.manufacturer_btn.CheckedChanged += new System.EventHandler(this.btn_home_CheckedChanged);
+            this.manufacturer_btn.CheckedChanged += new System.EventHandler(this.storage_btn_CheckedChanged);
             this.manufacturer_btn.Click += new System.EventHandler(this.manufacturer_btn_Click);
             // 
             // products_btn
@@ -336,14 +368,14 @@
             this.products_btn.Image = global::Inventory_Management_System.Properties.Resources.icons8_products_64__4_;
             this.products_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.products_btn.ImageSize = new System.Drawing.Size(25, 25);
-            this.products_btn.Location = new System.Drawing.Point(30, 202);
+            this.products_btn.Location = new System.Drawing.Point(25, 269);
             this.products_btn.Name = "products_btn";
             this.products_btn.Size = new System.Drawing.Size(149, 43);
             this.products_btn.TabIndex = 3;
             this.products_btn.Text = "Products";
             this.products_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.products_btn.UseTransparentBackground = true;
-            this.products_btn.CheckedChanged += new System.EventHandler(this.btn_home_CheckedChanged);
+            this.products_btn.CheckedChanged += new System.EventHandler(this.storage_btn_CheckedChanged);
             this.products_btn.Click += new System.EventHandler(this.products_btn_Click);
             // 
             // btn_home
@@ -372,7 +404,7 @@
             this.btn_home.Text = "Home";
             this.btn_home.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_home.UseTransparentBackground = true;
-            this.btn_home.CheckedChanged += new System.EventHandler(this.btn_home_CheckedChanged);
+            this.btn_home.CheckedChanged += new System.EventHandler(this.storage_btn_CheckedChanged);
             this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
             // pictureBox1
@@ -430,6 +462,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private System.Windows.Forms.Panel main_panel;
+        private Guna.UI2.WinForms.Guna2Button storage_btn;
     }
 }
 

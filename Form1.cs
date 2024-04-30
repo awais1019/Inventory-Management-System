@@ -37,10 +37,7 @@ namespace Inventory_Management_System
             setMenu(new Home_Control(), "Home");
         }
 
-        private void btn_home_CheckedChanged(object sender, EventArgs e)
-        {
-            moveImageBox(sender);
-        }
+   
 
         private void btn_close_Click(object sender, EventArgs e)
         {
@@ -105,6 +102,21 @@ namespace Inventory_Management_System
         private void dispatch_btn_Click(object sender, EventArgs e)
         {
             setMenu(new Dispatcher_Control(), "Dispatcher");
+        }
+
+        private void storage_btn_Click(object sender, EventArgs e)
+        {
+            setMenu(new Storage_Control(), "Storage");
+        }
+
+        private void storage_btn_CheckedChanged(object sender, EventArgs e)
+        {
+            moveImageBox(sender);
+        }
+
+        private void History_btn_Click(object sender, EventArgs e)
+        {
+            setMenu(new History_Control(), "History");
         }
     }
 }

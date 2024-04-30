@@ -56,3 +56,9 @@ D:\DataBase\Inventory-Management-System\obj\Debug\Inventory Management System.cs
 D:\DataBase\Inventory-Management-System\obj\Debug\Inventory Management System.csproj.CopyComplete
 D:\DataBase\Inventory-Management-System\obj\Debug\Inventory Management System.exe
 D:\DataBase\Inventory-Management-System\obj\Debug\Inventory Management System.pdb
+D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory_Management_System.UserControls.Cart_Control.resources
+D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory_Management_System.UserControls.Transportation_Control.resources
+D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory_Management_System.UserControls.Add_Block_Control.resources
+D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory_Management_System.UserControls.Add_Shelf_Control.resources
+D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory_Management_System.UserControls.Storage_Control.resources
+D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory_Management_System.UserControls.History_Control.resources
