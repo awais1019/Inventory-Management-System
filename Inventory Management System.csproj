@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL_Classes\Block.cs" />
     <Compile Include="BL_Classes\DatabaseManager.cs" />
     <Compile Include="BL_Classes\Dispatch.cs" />
     <Compile Include="BL_Classes\DispatchDetail.cs" />
@@ -63,8 +64,13 @@
     <Compile Include="BL_Classes\Product.cs" />
     <Compile Include="BL_Classes\ProductCategory.cs" />
     <Compile Include="BL_Classes\ProductMovement.cs" />
+    <Compile Include="BL_Classes\Shelf.cs" />
     <Compile Include="BL_Classes\Storage.cs" />
     <Compile Include="BL_Classes\Transportation.cs" />
+    <Compile Include="BL_Classes\Warehouse.cs" />
+    <Compile Include="DL\BlockDL.cs" />
+    <Compile Include="DL\ShelfDL.cs" />
+    <Compile Include="DL\WarehouseDL.cs" />
     <Compile Include="UserControls\Dispatcher_Control.cs">
       <SubType>UserControl</SubType>
     </Compile>

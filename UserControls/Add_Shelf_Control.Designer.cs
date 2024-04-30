@@ -30,7 +30,7 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.manufacturer_combo_box = new System.Windows.Forms.ComboBox();
+            this.block_combo_box = new System.Windows.Forms.ComboBox();
             this.Add_btn = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.manufacturer_combo_box);
+            this.panel2.Controls.Add(this.block_combo_box);
             this.panel2.Controls.Add(this.Add_btn);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
@@ -75,15 +75,15 @@
             this.label7.TabIndex = 32;
             this.label7.Text = "Block";
             // 
-            // manufacturer_combo_box
+            // block_combo_box
             // 
-            this.manufacturer_combo_box.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.manufacturer_combo_box.FormattingEnabled = true;
-            this.manufacturer_combo_box.Location = new System.Drawing.Point(351, 352);
-            this.manufacturer_combo_box.Name = "manufacturer_combo_box";
-            this.manufacturer_combo_box.Size = new System.Drawing.Size(283, 28);
-            this.manufacturer_combo_box.Sorted = true;
-            this.manufacturer_combo_box.TabIndex = 31;
+            this.block_combo_box.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.block_combo_box.FormattingEnabled = true;
+            this.block_combo_box.Location = new System.Drawing.Point(351, 352);
+            this.block_combo_box.Name = "block_combo_box";
+            this.block_combo_box.Size = new System.Drawing.Size(283, 28);
+            this.block_combo_box.Sorted = true;
+            this.block_combo_box.TabIndex = 31;
             // 
             // Add_btn
             // 
@@ -103,6 +103,7 @@
             this.Add_btn.Size = new System.Drawing.Size(180, 45);
             this.Add_btn.TabIndex = 30;
             this.Add_btn.Text = "Add";
+            this.Add_btn.Click += new System.EventHandler(this.Add_btn_Click);
             // 
             // label6
             // 
@@ -251,7 +252,7 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox manufacturer_combo_box;
+        private System.Windows.Forms.ComboBox block_combo_box;
         private Guna.UI2.WinForms.Guna2Button Add_btn;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

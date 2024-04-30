@@ -30,11 +30,11 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.manufacturer_combo_box = new System.Windows.Forms.ComboBox();
+            this.warehouse_combo_box = new System.Windows.Forms.ComboBox();
             this.Add_btn = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
-            this.shelfnumber_txtbox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.blockName_txtbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,11 +42,11 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.manufacturer_combo_box);
+            this.panel2.Controls.Add(this.warehouse_combo_box);
             this.panel2.Controls.Add(this.Add_btn);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.guna2Shapes1);
-            this.panel2.Controls.Add(this.shelfnumber_txtbox);
+            this.panel2.Controls.Add(this.blockName_txtbox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -65,15 +65,15 @@
             this.label7.TabIndex = 32;
             this.label7.Text = "Ware house";
             // 
-            // manufacturer_combo_box
+            // warehouse_combo_box
             // 
-            this.manufacturer_combo_box.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.manufacturer_combo_box.FormattingEnabled = true;
-            this.manufacturer_combo_box.Location = new System.Drawing.Point(349, 311);
-            this.manufacturer_combo_box.Name = "manufacturer_combo_box";
-            this.manufacturer_combo_box.Size = new System.Drawing.Size(283, 28);
-            this.manufacturer_combo_box.Sorted = true;
-            this.manufacturer_combo_box.TabIndex = 31;
+            this.warehouse_combo_box.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.warehouse_combo_box.FormattingEnabled = true;
+            this.warehouse_combo_box.Location = new System.Drawing.Point(349, 311);
+            this.warehouse_combo_box.Name = "warehouse_combo_box";
+            this.warehouse_combo_box.Size = new System.Drawing.Size(283, 28);
+            this.warehouse_combo_box.Sorted = true;
+            this.warehouse_combo_box.TabIndex = 31;
             // 
             // Add_btn
             // 
@@ -93,6 +93,7 @@
             this.Add_btn.Size = new System.Drawing.Size(180, 45);
             this.Add_btn.TabIndex = 30;
             this.Add_btn.Text = "Add";
+            this.Add_btn.Click += new System.EventHandler(this.Add_btn_Click);
             // 
             // label1
             // 
@@ -121,32 +122,32 @@
             this.guna2Shapes1.Text = "guna2Shapes1";
             this.guna2Shapes1.Zoom = 80;
             // 
-            // shelfnumber_txtbox
+            // blockName_txtbox
             // 
-            this.shelfnumber_txtbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.shelfnumber_txtbox.BorderColor = System.Drawing.Color.White;
-            this.shelfnumber_txtbox.BorderThickness = 0;
-            this.shelfnumber_txtbox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.shelfnumber_txtbox.DefaultText = "";
-            this.shelfnumber_txtbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.shelfnumber_txtbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.shelfnumber_txtbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.shelfnumber_txtbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.shelfnumber_txtbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.shelfnumber_txtbox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.shelfnumber_txtbox.ForeColor = System.Drawing.Color.Black;
-            this.shelfnumber_txtbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.shelfnumber_txtbox.Location = new System.Drawing.Point(335, 196);
-            this.shelfnumber_txtbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.shelfnumber_txtbox.Name = "shelfnumber_txtbox";
-            this.shelfnumber_txtbox.PasswordChar = '\0';
-            this.shelfnumber_txtbox.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.shelfnumber_txtbox.PlaceholderText = "A";
-            this.shelfnumber_txtbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.shelfnumber_txtbox.SelectedText = "";
-            this.shelfnumber_txtbox.Size = new System.Drawing.Size(307, 29);
-            this.shelfnumber_txtbox.TabIndex = 15;
-            this.shelfnumber_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.blockName_txtbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.blockName_txtbox.BorderColor = System.Drawing.Color.White;
+            this.blockName_txtbox.BorderThickness = 0;
+            this.blockName_txtbox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.blockName_txtbox.DefaultText = "";
+            this.blockName_txtbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.blockName_txtbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.blockName_txtbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.blockName_txtbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.blockName_txtbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.blockName_txtbox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.blockName_txtbox.ForeColor = System.Drawing.Color.Black;
+            this.blockName_txtbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.blockName_txtbox.Location = new System.Drawing.Point(335, 196);
+            this.blockName_txtbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.blockName_txtbox.Name = "blockName_txtbox";
+            this.blockName_txtbox.PasswordChar = '\0';
+            this.blockName_txtbox.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.blockName_txtbox.PlaceholderText = "A";
+            this.blockName_txtbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.blockName_txtbox.SelectedText = "";
+            this.blockName_txtbox.Size = new System.Drawing.Size(307, 29);
+            this.blockName_txtbox.TabIndex = 15;
+            this.blockName_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Add_Block_Control
             // 
@@ -165,10 +166,10 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox manufacturer_combo_box;
+        private System.Windows.Forms.ComboBox warehouse_combo_box;
         private Guna.UI2.WinForms.Guna2Button Add_btn;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
-        private Guna.UI2.WinForms.Guna2TextBox shelfnumber_txtbox;
+        private Guna.UI2.WinForms.Guna2TextBox blockName_txtbox;
     }
 }

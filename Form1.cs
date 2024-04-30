@@ -20,9 +20,12 @@ namespace Inventory_Management_System
         {
             InitializeComponent();
             DatabaseManager.openConnection();
+            WarehouseDL.loadIntoList();
+            BlockDL.loadIntoList();
+            CategoryDL.getCategoryFromDB();
+            ShelfDL.loadIntoList();
             ManufacturerDL.loadDataIntoList();
            // MessageBox.Show(ManufacturerDL.getManufacturer(1).CompanyName.ToString());
-            CategoryDL.getCategoryFromDB();
             ProductDL.loadDataIntoList();
         }
         
