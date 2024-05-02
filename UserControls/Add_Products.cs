@@ -25,6 +25,10 @@ namespace Inventory_Management_System.UserControls
             InitializeComponent();
             setCategoryComboBox();
             setManufacturerComboBox();
+            setBlockComboBox();
+            int blockid = (int)comboBlock.SelectedValue;
+            List<Shelf> sh = ShelfDL.getShelvesByBlock(blockid);
+            setShelfComboBox(sh);
         }
 
         public void clearfieldes()
@@ -73,6 +77,14 @@ namespace Inventory_Management_System.UserControls
             return null;
         }
 
+        private void comboBlock_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int blockid = (int)comboBlock.SelectedValue;
+            List<Shelf> sh = ShelfDL.getShelvesByBlock(blockid);
+            setShelfComboBox(sh);
+
+        }
+
         private void setCategoryComboBox()
         {
             //CategoryDL.getCategoryFromDB(); // Fetch categories from the database
@@ -86,6 +98,18 @@ namespace Inventory_Management_System.UserControls
             manufacturer_combo_box.DisplayMember = "CompanyName"; 
             manufacturer_combo_box.ValueMember = "ManufacturerId";
         }
+        private void setBlockComboBox()
+        {
+            comboBlock.DataSource = BlockDL.blocks;
+            comboBlock.DisplayMember = "BlockName";
+            comboBlock.ValueMember = "BlockId";
+        }
+        private void setShelfComboBox(List<Shelf> sh)
+        {
+            comboShelf.DataSource = sh;
+            comboShelf.DisplayMember = "ShelfName";
+            comboShelf.ValueMember = "ShelfId";
+        }
         private void Add_btn_Click(object sender, EventArgs e)
         {
             string productName = product_txtbox.Text;
@@ -94,11 +118,31 @@ namespace Inventory_Management_System.UserControls
             string quantity = quantity_txtbox.Text;
             int CategoryId = (int)category_combo_box.SelectedValue;
             int manufacturerId = (int)manufacturer_combo_box.SelectedValue;
+            int blockid = (int)comboBlock.SelectedValue;
+            int shelfid = (int)comboShelf.SelectedValue;
+            //int pid = ProductDL.isProductAlreadyExist(productName, manufacturerId);
+
             if (productName != null  && purchaseRate != null && sellRate != null && quantity != null)
             {
-                Product p = new Product(manufacturerId, productName, CategoryId, CategoryId, decimal.Parse(purchaseRate), decimal.Parse(sellRate), int.Parse(quantity), 30, DateTime.Now);
-                ProductDL.addIntoList(p);
-                ProductDL.addIntoDB(p);
+                decimal pr = decimal.Parse(purchaseRate);
+                int q = int.Parse(quantity);
+                decimal totalValue = pr * q;
+                Product p = new Product(manufacturerId, productName, CategoryId, pr, decimal.Parse(sellRate), q, 30, totalValue, DateTime.Now);
+                int pid = ProductDL.addIntoDB(p);
+                if (pid == 0)
+                {
+                    return;
+                }
+                Shelf shelf = ShelfDL.getShelf(shelfid);
+                shelf.currentCapacity = shelf.capacity - (shelf.currentCapacity + q);
+                ShelfDL.updateShelfIntoList(shelf);
+                ShelfDL.updateShelfIntoDB(shelf);
+                ProductShelf ps = new ProductShelf(pid, shelfid, q);
+                ProductShelfDL.addIntoList(ps);
+                ProductShelfDL.addIntoDB(ps);
+                ProductMovement pm = new ProductMovement(pid, q, "IN", DateTime.Now);
+                ProductMovementDL.addIntoDB(pm);
+               
             }
 
         }

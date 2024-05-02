@@ -33,7 +33,7 @@ namespace Inventory_Management_System.UserControls
                 GridShelfs.Rows[rowIndex].Cells["AvailableCapacity"].Value = shelf.capacity - shelf.currentCapacity;
                 GridShelfs.Rows[rowIndex].Cells["TotalCapacity"].Value = shelf.capacity;
                 GridShelfs.Rows[rowIndex].Cells["BlockName"].Value = BlockDL.getBlock(shelf.blockId).blockName;
-                GridShelfs.Rows[rowIndex].Cells["ShelfCategory"].Value = ShelfDL.getCategoryName(shelf.blockId, shelf.shelfId);
+               // GridShelfs.Rows[rowIndex].Cells["ShelfCategory"].Value = ShelfDL.getCategoryName(shelf.blockId, shelf.shelfId);
                 
 
                 // Apply cell styling

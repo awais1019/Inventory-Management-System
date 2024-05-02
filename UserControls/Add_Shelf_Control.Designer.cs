@@ -39,7 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.category_combo_box = new System.Windows.Forms.ComboBox();
             this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
-            this.shelfnumber_txtbox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.shelfname_txtbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +56,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.category_combo_box);
             this.panel2.Controls.Add(this.guna2Shapes1);
-            this.panel2.Controls.Add(this.shelfnumber_txtbox);
+            this.panel2.Controls.Add(this.shelfname_txtbox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -179,9 +179,10 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
             this.label1.Location = new System.Drawing.Point(133, 115);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 28);
+            this.label1.Size = new System.Drawing.Size(145, 28);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Shelf Number";
+            this.label1.Text = "Shelf Name";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // category_combo_box
             // 
@@ -208,32 +209,33 @@
             this.guna2Shapes1.Text = "guna2Shapes1";
             this.guna2Shapes1.Zoom = 80;
             // 
-            // shelfnumber_txtbox
+            // shelfname_txtbox
             // 
-            this.shelfnumber_txtbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.shelfnumber_txtbox.BorderColor = System.Drawing.Color.White;
-            this.shelfnumber_txtbox.BorderThickness = 0;
-            this.shelfnumber_txtbox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.shelfnumber_txtbox.DefaultText = "";
-            this.shelfnumber_txtbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.shelfnumber_txtbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.shelfnumber_txtbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.shelfnumber_txtbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.shelfnumber_txtbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.shelfnumber_txtbox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.shelfnumber_txtbox.ForeColor = System.Drawing.Color.Black;
-            this.shelfnumber_txtbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.shelfnumber_txtbox.Location = new System.Drawing.Point(351, 104);
-            this.shelfnumber_txtbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.shelfnumber_txtbox.Name = "shelfnumber_txtbox";
-            this.shelfnumber_txtbox.PasswordChar = '\0';
-            this.shelfnumber_txtbox.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.shelfnumber_txtbox.PlaceholderText = "1";
-            this.shelfnumber_txtbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.shelfnumber_txtbox.SelectedText = "";
-            this.shelfnumber_txtbox.Size = new System.Drawing.Size(307, 29);
-            this.shelfnumber_txtbox.TabIndex = 15;
-            this.shelfnumber_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.shelfname_txtbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.shelfname_txtbox.BorderColor = System.Drawing.Color.White;
+            this.shelfname_txtbox.BorderThickness = 0;
+            this.shelfname_txtbox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.shelfname_txtbox.DefaultText = "";
+            this.shelfname_txtbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.shelfname_txtbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.shelfname_txtbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.shelfname_txtbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.shelfname_txtbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.shelfname_txtbox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.shelfname_txtbox.ForeColor = System.Drawing.Color.Black;
+            this.shelfname_txtbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.shelfname_txtbox.Location = new System.Drawing.Point(351, 104);
+            this.shelfname_txtbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.shelfname_txtbox.Name = "shelfname_txtbox";
+            this.shelfname_txtbox.PasswordChar = '●';
+            this.shelfname_txtbox.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.shelfname_txtbox.PlaceholderText = "A";
+            this.shelfname_txtbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.shelfname_txtbox.SelectedText = "";
+            this.shelfname_txtbox.Size = new System.Drawing.Size(307, 29);
+            this.shelfname_txtbox.TabIndex = 15;
+            this.shelfname_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.shelfname_txtbox.UseSystemPasswordChar = true;
             // 
             // Add_Shelf_Control
             // 
@@ -261,6 +263,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox category_combo_box;
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
-        private Guna.UI2.WinForms.Guna2TextBox shelfnumber_txtbox;
+        private Guna.UI2.WinForms.Guna2TextBox shelfname_txtbox;
     }
 }

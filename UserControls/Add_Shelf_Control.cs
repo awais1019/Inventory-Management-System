@@ -23,48 +23,40 @@ namespace Inventory_Management_System.UserControls
         
         private void Add_btn_Click(object sender, EventArgs e)
         {
-            string shelfNumber = shelfnumber_txtbox.Text;
+            string shelfName = shelfname_txtbox.Text;
             string capacity = capacity_txtbox.Text;
             int categoryId = (int)category_combo_box.SelectedValue;
             int blockId = (int)block_combo_box.SelectedValue;
-            if (shelfNumber.Length > 0 && capacity.Length > 0)
+            if (shelfName.Length > 0 && capacity.Length > 0)
             {
-                if (!isShelfAlreadyExist(categoryId, blockId))
-                {
-
-                    Shelf s = new Shelf(categoryId, int.Parse(capacity), 0, categoryId, blockId);
-                    ShelfDL.addIntoList(s);
-                    ShelfDL.addIntoDB(s);
-                }
-                else
-                {
-                    MessageBox.Show("Shelf Already Exist");
-                }
+                 Shelf s = new Shelf(categoryId, int.Parse(capacity), 0, shelfName, blockId);
+                 ShelfDL.addIntoList(s);
+                 ShelfDL.addIntoDB(s); 
             }
             
 
         }
-        private bool isShelfAlreadyExist(int categoryId, int blockId)
-        {
-            List<Shelf> sh = new List<Shelf>();
-            for (int i = 0; i < ShelfDL.shelves.Count; i++)
-            {
-                if (blockId == ShelfDL.shelves[i].blockId)
-                {
-                    sh.Add(ShelfDL.shelves[i]);
-                }
-            }
-
-
-            for (int i= 0; i < sh.Count; i++)
-            {
-                if (sh[i].shelfId == categoryId)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
+        //private bool isShelfAlreadyExist(int categoryId, int blockId)
+        //{
+        //    List<Shelf> sh = new List<Shelf>();
+        //    for (int i = 0; i < ShelfDL.shelves.Count; i++)
+        //    {
+        //        if (blockId == ShelfDL.shelves[i].blockId)
+        //        {
+        //            sh.Add(ShelfDL.shelves[i]);
+        //        }
+        //    }
+        //
+        //
+        //    for (int i= 0; i < sh.Count; i++)
+        //    {
+        //        if (sh[i].shelfId == categoryId)
+        //        {
+        //            return false;
+        //        }
+        //    }
+        //    return true;
+        //}
         private void setCategoryComboDataSource()
         {
             category_combo_box.DataSource = CategoryDL.categories;
@@ -76,6 +68,11 @@ namespace Inventory_Management_System.UserControls
             block_combo_box.DataSource = BlockDL.blocks;
             block_combo_box.DisplayMember = "BlockName";
             block_combo_box.ValueMember = "BlockId";
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

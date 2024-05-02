@@ -1,6 +1,7 @@
 ﻿using Inventory_Management_System.BL_Classes;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Security.Cryptography;
@@ -17,18 +18,15 @@ namespace Inventory_Management_System.DL
         {
             products.Add(p);
         }
-        public static void addIntoDB(Product p)
+        public static int addIntoDB(Product p)
         {
             try
             {
-                // Define the SQL query to insert a new product into the Product table
-                string query = @"INSERT INTO Product (ManufacturerID, ProductName, CategoryID, PurchaseRate, SellRate, Quantity, ThresholdQuantity, ShelfId, AddedAt) 
-                             VALUES (@ManufacturerID, @ProductName, @CategoryID, @PurchaseRate, @SellRate, @Quantity, @ThresholdQuantity, @ShelfId, @AddedAt)";
-
-                SqlCommand command = new SqlCommand(query, DatabaseManager.connection);
-
+                
+                SqlCommand command = new SqlCommand("spAddProduct", DatabaseManager.connection);
+                command.CommandType = CommandType.StoredProcedure;
                 // Add parameters to the command
-                command.Parameters.AddWithValue("@ShelfId", p.shelfId);
+                command.Parameters.AddWithValue("@TotalValue", p.totalValue);
                 command.Parameters.AddWithValue("@ManufacturerID", p.ManufacturerID);
                 command.Parameters.AddWithValue("@ProductName", p.ProductName);
                 command.Parameters.AddWithValue("@CategoryID", p.CategoryID);
@@ -37,13 +35,15 @@ namespace Inventory_Management_System.DL
                 command.Parameters.AddWithValue("@Quantity", p.Quantity);
                 command.Parameters.AddWithValue("@ThresholdQuantity", p.ThresholdQuantity);
                 command.Parameters.AddWithValue("@AddedAt", p.AddedAt);
-
-                // Execute the INSERT command
-                int rowsAffected = command.ExecuteNonQuery();
-
-                if (rowsAffected > 0)
+                command.Parameters.Add("@ProductID", SqlDbType.Int).Direction = ParameterDirection.Output;
+                command.ExecuteNonQuery();
+                int insertedProductId = Convert.ToInt32(command.Parameters["@ProductId"].Value);
+                p.ProductID = insertedProductId;
+                products.Add(p);
+                if (insertedProductId > 0)
                 {
                     MessageBox.Show("Product added successfully.");
+                    return insertedProductId;
                 }
                 else
                 {
@@ -54,15 +54,16 @@ namespace Inventory_Management_System.DL
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+            return 0;
         }
         public static void loadDataIntoList()
         {
             try
             {
-                string query = "SELECT * FROM Product";
-                SqlCommand command = new SqlCommand(query, DatabaseManager.connection);
+               // string query = "SELECT * FROM Product";
+                SqlCommand command = new SqlCommand("spGetAllProduct", DatabaseManager.connection);
                 SqlDataReader reader = command.ExecuteReader();
-
+                command.CommandType = CommandType.StoredProcedure;
                 // Clear the existing list before loading new data
                 products.Clear();
 
@@ -70,7 +71,7 @@ namespace Inventory_Management_System.DL
                 {
                     int productID = Convert.ToInt32(reader["ProductID"]);
                     int manufacturerID = Convert.ToInt32(reader["ManufacturerID"]);
-                    int shelfId = Convert.ToInt32(reader["ShelfID"]); // Assuming ShelfID is present in the Products table
+                    decimal totalValue = Convert.ToDecimal(reader["TotalValue"]); // Assuming ShelfID is present in the Products table
                     string productName = reader["ProductName"].ToString();
                     int categoryID = Convert.ToInt32(reader["CategoryID"]);
                     decimal purchaseRate = Convert.ToDecimal(reader["PurchaseRate"]);
@@ -80,7 +81,7 @@ namespace Inventory_Management_System.DL
                     DateTime addedAt = Convert.ToDateTime(reader["AddedAt"]);
 
                     // Create Product object and add it to the products list
-                    Product product = new Product(productID ,manufacturerID, shelfId,productName, categoryID, purchaseRate, sellRate, quantity, thresholdQuantity, addedAt);
+                    Product product = new Product(productID ,manufacturerID,productName, categoryID, purchaseRate, sellRate, quantity, thresholdQuantity, totalValue ,addedAt);
                     products.Add(product);
                 }
 
@@ -122,9 +123,9 @@ namespace Inventory_Management_System.DL
         {
             try
             {
-                string deleteCommandText = "DELETE FROM Product WHERE ProductID = @ProductID";
-                SqlCommand command = new SqlCommand(deleteCommandText, DatabaseManager.connection);
-
+                
+                SqlCommand command = new SqlCommand("spdeleteProduct", DatabaseManager.connection);
+                command.CommandType = CommandType.StoredProcedure;
                 // Add parameters to the command
                 command.Parameters.AddWithValue("@ProductID", id);
 
@@ -145,6 +146,68 @@ namespace Inventory_Management_System.DL
                 MessageBox.Show("Error: " + ex.Message.ToString());
             }
         }
+
+        public static int isProductAlreadyExist(string productName, int manufacturerId)
+        {
+            int len = products.Count;
+            for (int i = 0; i < len ; i++)
+            {
+                if (products[i].ProductName == productName && products[i].ManufacturerID == manufacturerId)
+                {
+                    return products[i].ProductID;
+                }
+            }
+            return -1;
+        }
+        public static void updateProductIntoList(Product p)
+        {
+            int len = products.Count;
+            for (int i = 0; i < len; i++)
+            {
+                if (products[i].ProductID == p.ProductID)
+                {
+                    products[i] = p;
+                }
+            }
+        }
+        public static void UpdateProductIntoDB(Product p)
+        {
+            try
+            {
+                
+
+                SqlCommand command = new SqlCommand("spUpdateProduct", DatabaseManager.connection);
+                command.CommandType = CommandType.StoredProcedure;
+                // Add parameters to the command
+                command.Parameters.AddWithValue("@ManufacturerID", p.ManufacturerID);
+                command.Parameters.AddWithValue("@ProductName", p.ProductName);
+                command.Parameters.AddWithValue("@CategoryID", p.CategoryID);
+                command.Parameters.AddWithValue("@PurchaseRate", p.PurchaseRate);
+                command.Parameters.AddWithValue("@SellRate", p.SellRate);
+                command.Parameters.AddWithValue("@Quantity", p.Quantity);
+                command.Parameters.AddWithValue("@ThresholdQuantity", p.ThresholdQuantity);
+                command.Parameters.AddWithValue("@TotalValue", p.totalValue);
+                command.Parameters.AddWithValue("@AddedAt", p.AddedAt);
+                command.Parameters.AddWithValue("@ProductID", p.ProductID); // Add the product ID parameter
+
+                // Execute the UPDATE command
+                int rowsAffected = command.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Product updated successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update product.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
 
     }
 }

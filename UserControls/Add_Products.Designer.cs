@@ -46,12 +46,20 @@
             this.category_combo_box = new System.Windows.Forms.ComboBox();
             this.gunastyles = new Guna.UI2.WinForms.Guna2Shapes();
             this.product_txtbox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboShelf = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBlock = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.comboShelf);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.comboBlock);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.manufacturer_combo_box);
             this.panel2.Controls.Add(this.Add_btn);
@@ -81,7 +89,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            this.label7.Location = new System.Drawing.Point(127, 428);
+            this.label7.Location = new System.Drawing.Point(102, 298);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(168, 28);
             this.label7.TabIndex = 32;
@@ -91,7 +99,7 @@
             // 
             this.manufacturer_combo_box.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.manufacturer_combo_box.FormattingEnabled = true;
-            this.manufacturer_combo_box.Location = new System.Drawing.Point(355, 428);
+            this.manufacturer_combo_box.Location = new System.Drawing.Point(353, 298);
             this.manufacturer_combo_box.Name = "manufacturer_combo_box";
             this.manufacturer_combo_box.Size = new System.Drawing.Size(283, 28);
             this.manufacturer_combo_box.Sorted = true;
@@ -123,7 +131,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            this.label6.Location = new System.Drawing.Point(137, 358);
+            this.label6.Location = new System.Drawing.Point(135, 243);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(122, 28);
             this.label6.TabIndex = 29;
@@ -135,7 +143,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            this.label5.Location = new System.Drawing.Point(139, 288);
+            this.label5.Location = new System.Drawing.Point(134, 194);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 28);
             this.label5.TabIndex = 26;
@@ -146,7 +154,7 @@
             this.guna2Shapes5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2Shapes5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
             this.guna2Shapes5.LineThickness = 2;
-            this.guna2Shapes5.Location = new System.Drawing.Point(326, 303);
+            this.guna2Shapes5.Location = new System.Drawing.Point(321, 209);
             this.guna2Shapes5.Name = "guna2Shapes5";
             this.guna2Shapes5.PolygonSkip = 1;
             this.guna2Shapes5.Rotate = 0F;
@@ -171,7 +179,7 @@
             this.quantity_txtbox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.quantity_txtbox.ForeColor = System.Drawing.Color.Black;
             this.quantity_txtbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.quantity_txtbox.Location = new System.Drawing.Point(346, 276);
+            this.quantity_txtbox.Location = new System.Drawing.Point(341, 182);
             this.quantity_txtbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.quantity_txtbox.Name = "quantity_txtbox";
             this.quantity_txtbox.PasswordChar = '\0';
@@ -189,7 +197,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            this.label4.Location = new System.Drawing.Point(104, 147);
+            this.label4.Location = new System.Drawing.Point(102, 88);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(177, 28);
             this.label4.TabIndex = 23;
@@ -200,7 +208,7 @@
             this.guna2Shapes4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2Shapes4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
             this.guna2Shapes4.LineThickness = 2;
-            this.guna2Shapes4.Location = new System.Drawing.Point(330, 153);
+            this.guna2Shapes4.Location = new System.Drawing.Point(324, 103);
             this.guna2Shapes4.Name = "guna2Shapes4";
             this.guna2Shapes4.PolygonSkip = 1;
             this.guna2Shapes4.Rotate = 0F;
@@ -225,7 +233,7 @@
             this.prate_txtbox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.prate_txtbox.ForeColor = System.Drawing.Color.Black;
             this.prate_txtbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.prate_txtbox.Location = new System.Drawing.Point(350, 126);
+            this.prate_txtbox.Location = new System.Drawing.Point(344, 77);
             this.prate_txtbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.prate_txtbox.Name = "prate_txtbox";
             this.prate_txtbox.PasswordChar = '\0';
@@ -243,7 +251,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            this.label3.Location = new System.Drawing.Point(140, 216);
+            this.label3.Location = new System.Drawing.Point(135, 149);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 28);
             this.label3.TabIndex = 20;
@@ -254,7 +262,7 @@
             this.guna2Shapes3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2Shapes3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
             this.guna2Shapes3.LineThickness = 2;
-            this.guna2Shapes3.Location = new System.Drawing.Point(326, 228);
+            this.guna2Shapes3.Location = new System.Drawing.Point(321, 161);
             this.guna2Shapes3.Name = "guna2Shapes3";
             this.guna2Shapes3.PolygonSkip = 1;
             this.guna2Shapes3.Rotate = 0F;
@@ -279,7 +287,7 @@
             this.sale_rate_txtbox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.sale_rate_txtbox.ForeColor = System.Drawing.Color.Black;
             this.sale_rate_txtbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.sale_rate_txtbox.Location = new System.Drawing.Point(346, 201);
+            this.sale_rate_txtbox.Location = new System.Drawing.Point(341, 134);
             this.sale_rate_txtbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sale_rate_txtbox.Name = "sale_rate_txtbox";
             this.sale_rate_txtbox.PasswordChar = '\0';
@@ -297,7 +305,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            this.label1.Location = new System.Drawing.Point(137, 70);
+            this.label1.Location = new System.Drawing.Point(138, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 28);
             this.label1.TabIndex = 1;
@@ -307,7 +315,7 @@
             // 
             this.category_combo_box.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.category_combo_box.FormattingEnabled = true;
-            this.category_combo_box.Location = new System.Drawing.Point(355, 362);
+            this.category_combo_box.Location = new System.Drawing.Point(353, 247);
             this.category_combo_box.Name = "category_combo_box";
             this.category_combo_box.Size = new System.Drawing.Size(283, 28);
             this.category_combo_box.Sorted = true;
@@ -318,7 +326,7 @@
             this.gunastyles.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gunastyles.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
             this.gunastyles.LineThickness = 2;
-            this.gunastyles.Location = new System.Drawing.Point(323, 85);
+            this.gunastyles.Location = new System.Drawing.Point(321, 46);
             this.gunastyles.Name = "gunastyles";
             this.gunastyles.PolygonSkip = 1;
             this.gunastyles.Rotate = 0F;
@@ -343,7 +351,7 @@
             this.product_txtbox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.product_txtbox.ForeColor = System.Drawing.Color.Black;
             this.product_txtbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.product_txtbox.Location = new System.Drawing.Point(343, 59);
+            this.product_txtbox.Location = new System.Drawing.Point(341, 20);
             this.product_txtbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.product_txtbox.Name = "product_txtbox";
             this.product_txtbox.PasswordChar = '\0';
@@ -354,6 +362,51 @@
             this.product_txtbox.Size = new System.Drawing.Size(307, 29);
             this.product_txtbox.TabIndex = 15;
             this.product_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.label2.Location = new System.Drawing.Point(146, 401);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 28);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Shelf";
+            // 
+            // comboShelf
+            // 
+            this.comboShelf.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboShelf.FormattingEnabled = true;
+            this.comboShelf.Location = new System.Drawing.Point(353, 405);
+            this.comboShelf.Name = "comboShelf";
+            this.comboShelf.Size = new System.Drawing.Size(283, 28);
+            this.comboShelf.Sorted = true;
+            this.comboShelf.TabIndex = 35;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.label8.Location = new System.Drawing.Point(146, 350);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(76, 28);
+            this.label8.TabIndex = 34;
+            this.label8.Text = "Block";
+            // 
+            // comboBlock
+            // 
+            this.comboBlock.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBlock.FormattingEnabled = true;
+            this.comboBlock.Location = new System.Drawing.Point(353, 354);
+            this.comboBlock.Name = "comboBlock";
+            this.comboBlock.Size = new System.Drawing.Size(283, 28);
+            this.comboBlock.Sorted = true;
+            this.comboBlock.TabIndex = 33;
+            this.comboBlock.SelectedIndexChanged += new System.EventHandler(this.comboBlock_SelectedIndexChanged);
             // 
             // Add_Products
             // 
@@ -388,5 +441,9 @@
         private Guna.UI2.WinForms.Guna2TextBox product_txtbox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox manufacturer_combo_box;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboShelf;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBlock;
     }
 }

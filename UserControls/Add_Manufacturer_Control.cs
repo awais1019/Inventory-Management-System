@@ -29,7 +29,7 @@ namespace Inventory_Management_System.UserControls
             {
                 Manufacturer manufacturer = new Manufacturer(name, email, phone, location);
                 ManufacturerDL.addManufacturerIntoDB(manufacturer);
-                ManufacturerDL.addManufacturerIntoList(manufacturer);
+                //ManufacturerDL.addManufacturerIntoList(manufacturer);
             }
         }
 

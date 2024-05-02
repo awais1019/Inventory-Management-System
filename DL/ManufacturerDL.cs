@@ -1,6 +1,7 @@
 ﻿using Inventory_Management_System.BL_Classes;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -16,16 +17,18 @@ namespace Inventory_Management_System.DL
         {
             try
             {
-
-                string query = "INSERT INTO Manufacturer (CompanyName, Email, Phone, Location) VALUES (@Name, @Email, @Phone, @Location)";
-                SqlCommand command = new SqlCommand(query, DatabaseManager.connection);
-                command.Parameters.AddWithValue("@Name", manufacturer.CompanyName);
+                SqlCommand command = new SqlCommand("spAddManufacturer", DatabaseManager.connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@CompanyName", manufacturer.CompanyName);
                 command.Parameters.AddWithValue("@Email", manufacturer.Email);
                 command.Parameters.AddWithValue("@Phone", manufacturer.Phone);
                 command.Parameters.AddWithValue("@Location", manufacturer.Location);
-
-                int rowsAffected = command.ExecuteNonQuery();
-                if (rowsAffected > 0)
+                command.Parameters.Add("@ManufacturerID", SqlDbType.Int).Direction = ParameterDirection.Output;
+                command.ExecuteNonQuery();
+                int id = Convert.ToInt32(command.Parameters["@ManufacturerID"].Value);
+                manufacturer.ManufacturerID = id;
+                manufacturers.Add(manufacturer);
+                if (id > 0)
                 {
                     MessageBox.Show("Manufacturer added successfully.");
                 }
@@ -49,10 +52,10 @@ namespace Inventory_Management_System.DL
             try
             {
 
-                string query = "SELECT * FROM Manufacturer";
-                SqlCommand command = new SqlCommand(query, DatabaseManager.connection);
+                
+                SqlCommand command = new SqlCommand("spGetAllManufacturer", DatabaseManager.connection);
                 SqlDataReader reader = command.ExecuteReader();
-
+                command.CommandType = CommandType.StoredProcedure;
                 // Clear the existing list before loading new data
                 manufacturers.Clear();
 
@@ -107,9 +110,9 @@ namespace Inventory_Management_System.DL
         {
             try
             {
-                string deleteCommandText = "DELETE FROM Manufacturer WHERE ManufacturerID = @ManufacturerID";
-                SqlCommand command = new SqlCommand(deleteCommandText, DatabaseManager.connection);
-
+                //string deleteCommandText = "DELETE FROM Manufacturer WHERE ManufacturerID = @ManufacturerID";
+                SqlCommand command = new SqlCommand("spDeleteManufacturer", DatabaseManager.connection);
+                command.CommandType = CommandType.StoredProcedure;
                 // Add parameters to the command
                 command.Parameters.AddWithValue("@ManufacturerID", id);
 

@@ -6,12 +6,27 @@ using System.Threading.Tasks;
 
 namespace Inventory_Management_System.BL_Classes
 {
-    internal class ProductMovement
+    public class ProductMovement
     {
-        public int MovementID { get; set; }
-        public int ProductID { get; set; }
-        public int Quantity { get; set; }
-        public string MovementType { get; set; }
-        public DateTime MovementTime { get; set; }
+        public int movementID { get; set; }
+        public int productID { get; set; }
+        public int quantity { get; set; }
+        public string movementType { get; set; }
+        public DateTime movementTime { get; set; }
+        public ProductMovement(int movementID, int productID, int quantity, string movementType, DateTime movementTime)
+        {
+            this.movementID = movementID;
+            this.productID = productID;
+            this.quantity = quantity;
+            this.movementType = movementType;
+            this.movementTime = movementTime;
+        }
+        public ProductMovement(int productID, int quantity, string movementType, DateTime movementTime)
+        {
+            this.productID = productID;
+            this.quantity = quantity;
+            this.movementType = movementType;
+            this.movementTime = movementTime;
+        }
     }
 }

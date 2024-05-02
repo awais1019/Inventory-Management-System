@@ -64,11 +64,14 @@
     <Compile Include="BL_Classes\Product.cs" />
     <Compile Include="BL_Classes\ProductCategory.cs" />
     <Compile Include="BL_Classes\ProductMovement.cs" />
+    <Compile Include="BL_Classes\ProductShelf.cs" />
     <Compile Include="BL_Classes\Shelf.cs" />
     <Compile Include="BL_Classes\Storage.cs" />
     <Compile Include="BL_Classes\Transportation.cs" />
     <Compile Include="BL_Classes\Warehouse.cs" />
     <Compile Include="DL\BlockDL.cs" />
+    <Compile Include="DL\ProductMovementDL.cs" />
+    <Compile Include="DL\ProductShelfDL.cs" />
     <Compile Include="DL\ShelfDL.cs" />
     <Compile Include="DL\WarehouseDL.cs" />
     <Compile Include="UserControls\Dispatcher_Control.cs">

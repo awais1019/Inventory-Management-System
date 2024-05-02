@@ -11,14 +11,14 @@ namespace Inventory_Management_System.BL_Classes
         public int shelfId {  get; set; }
         public int capacity { get; set; }
         public int currentCapacity { get; set; }
-        public int categoryId { get; set; }
         public int blockId { get; set; }
-        public Shelf(int shelfId, int capacity, int currentCapacity, int categoryId, int blockId)
+        public string shelfName { get; set; }
+        public Shelf(int shelfId, int capacity, int currentCapacity, string shelfName, int blockId)
         {
             this.shelfId = shelfId;
             this.capacity = capacity;
             this.currentCapacity = currentCapacity;
-            this.categoryId = categoryId;
+            this.shelfName = shelfName;
             this.blockId = blockId;
         }
     }

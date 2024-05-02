@@ -41,9 +41,6 @@
             this.Add_Product_btn = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.GridProduct = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.status_bar_panel = new System.Windows.Forms.Panel();
-            this.count_students_label = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.ProductCheckbox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +49,9 @@
             this.ProductQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductManufacturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status_bar_panel = new System.Windows.Forms.Panel();
+            this.count_students_label = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridProduct)).BeginInit();
@@ -256,44 +256,6 @@
             this.GridProduct.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.Gray;
             this.GridProduct.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             // 
-            // status_bar_panel
-            // 
-            this.status_bar_panel.BackColor = System.Drawing.Color.Transparent;
-            this.status_bar_panel.Controls.Add(this.count_students_label);
-            this.status_bar_panel.Controls.Add(this.label7);
-            this.status_bar_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.status_bar_panel.Location = new System.Drawing.Point(0, 577);
-            this.status_bar_panel.Name = "status_bar_panel";
-            this.status_bar_panel.Size = new System.Drawing.Size(834, 25);
-            this.status_bar_panel.TabIndex = 56;
-            this.status_bar_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.status_bar_panel_Paint);
-            // 
-            // count_students_label
-            // 
-            this.count_students_label.AutoSize = true;
-            this.count_students_label.Dock = System.Windows.Forms.DockStyle.Left;
-            this.count_students_label.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.count_students_label.ForeColor = System.Drawing.Color.Black;
-            this.count_students_label.Location = new System.Drawing.Point(118, 0);
-            this.count_students_label.Name = "count_students_label";
-            this.count_students_label.Size = new System.Drawing.Size(18, 19);
-            this.count_students_label.TabIndex = 9;
-            this.count_students_label.Text = "0";
-            this.count_students_label.Click += new System.EventHandler(this.count_students_label_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(0, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(118, 19);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Total Products:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
             // ProductCheckbox
             // 
             this.ProductCheckbox.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -361,6 +323,44 @@
             this.ProductManufacturer.MinimumWidth = 8;
             this.ProductManufacturer.Name = "ProductManufacturer";
             this.ProductManufacturer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // status_bar_panel
+            // 
+            this.status_bar_panel.BackColor = System.Drawing.Color.Transparent;
+            this.status_bar_panel.Controls.Add(this.count_students_label);
+            this.status_bar_panel.Controls.Add(this.label7);
+            this.status_bar_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.status_bar_panel.Location = new System.Drawing.Point(0, 577);
+            this.status_bar_panel.Name = "status_bar_panel";
+            this.status_bar_panel.Size = new System.Drawing.Size(834, 25);
+            this.status_bar_panel.TabIndex = 56;
+            this.status_bar_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.status_bar_panel_Paint);
+            // 
+            // count_students_label
+            // 
+            this.count_students_label.AutoSize = true;
+            this.count_students_label.Dock = System.Windows.Forms.DockStyle.Left;
+            this.count_students_label.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.count_students_label.ForeColor = System.Drawing.Color.Black;
+            this.count_students_label.Location = new System.Drawing.Point(118, 0);
+            this.count_students_label.Name = "count_students_label";
+            this.count_students_label.Size = new System.Drawing.Size(18, 19);
+            this.count_students_label.TabIndex = 9;
+            this.count_students_label.Text = "0";
+            this.count_students_label.Click += new System.EventHandler(this.count_students_label_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(118, 19);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Total Products:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // Products_Control
             // 
