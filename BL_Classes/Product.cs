@@ -18,7 +18,7 @@ namespace Inventory_Management_System.BL_Classes
         public int Quantity { get; set; }
         public int ThresholdQuantity { get; set; }
         public DateTime AddedAt { get; set; }
-        public Product(int productID, int manufacturerID ,string productName, int categoryID, decimal purchaseRate, decimal sellRate, int quantity, int thresholdQuantity, decimal TotalValue, DateTime addedAt)
+        public Product(int productID, int manufacturerID ,string productName, int categoryID, decimal purchaseRate, decimal sellRate, int quantity, int thresholdQuantity, decimal totalValue, DateTime addedAt)
         {
             ProductID = productID;
             ManufacturerID = manufacturerID;

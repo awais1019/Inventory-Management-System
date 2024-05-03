@@ -17,7 +17,7 @@ namespace Inventory_Management_System.UserControls
         public Add_Shelf_Control()
         {
             InitializeComponent();
-            setCategoryComboDataSource();
+            
             setBlockComboDataSource();
         }
         
@@ -25,12 +25,10 @@ namespace Inventory_Management_System.UserControls
         {
             string shelfName = shelfname_txtbox.Text;
             string capacity = capacity_txtbox.Text;
-            int categoryId = (int)category_combo_box.SelectedValue;
             int blockId = (int)block_combo_box.SelectedValue;
             if (shelfName.Length > 0 && capacity.Length > 0)
             {
-                 Shelf s = new Shelf(categoryId, int.Parse(capacity), 0, shelfName, blockId);
-                 ShelfDL.addIntoList(s);
+                 Shelf s = new Shelf(int.Parse(capacity), 0, shelfName, blockId);
                  ShelfDL.addIntoDB(s); 
             }
             
@@ -57,14 +55,10 @@ namespace Inventory_Management_System.UserControls
         //    }
         //    return true;
         //}
-        private void setCategoryComboDataSource()
-        {
-            category_combo_box.DataSource = CategoryDL.categories;
-            category_combo_box.DisplayMember = "CategoryName";
-            category_combo_box.ValueMember = "CategoryId";
-        }
+       
         private void setBlockComboDataSource()
         {
+            BlockDL.blocks.Sort((x, y) => string.Compare(x.blockName, y.blockName));
             block_combo_box.DataSource = BlockDL.blocks;
             block_combo_box.DisplayMember = "BlockName";
             block_combo_box.ValueMember = "BlockId";

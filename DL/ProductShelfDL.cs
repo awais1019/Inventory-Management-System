@@ -1,6 +1,7 @@
 ﻿using Inventory_Management_System.BL_Classes;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -79,5 +80,49 @@ namespace Inventory_Management_System.DL
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+        public static void deleteProductShelfFromList(int pid)
+        {
+            for (int i = productShelves.Count - 1; i >= 0; i--)
+            {
+                ProductShelf ps = productShelves[i];
+                if (ps.productId == pid)
+                {
+                    Shelf shelf = ShelfDL.getShelf(ps.shelfId);
+                    if (shelf != null)
+                    {
+                        shelf.currentCapacity -= ps.quantity;
+                        ShelfDL.updateShelfIntoList(shelf);
+                        ShelfDL.updateShelfIntoDB(shelf);
+                    }
+                    productShelves.RemoveAt(i);
+                }
+            }
+        }
+        public static void deleteProductShelfFromDBbyPid(int pid)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("spDeleteProductShelfByProductId", DatabaseManager.connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@ProductId", pid);
+                int rowsAffected = command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+        public static void updateProductShelfIntoList(ProductShelf p)
+        {
+            foreach(ProductShelf ps in productShelves)
+            {
+                if (ps.shelfId == p.shelfId && ps.productId == p.productId)
+                {
+                    ps.quantity = p.quantity;
+                }
+            }
+        }
+        //public static void updateProductShelf
+
     }
 }

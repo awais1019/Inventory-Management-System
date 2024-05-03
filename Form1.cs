@@ -27,6 +27,8 @@ namespace Inventory_Management_System
             ManufacturerDL.loadDataIntoList();
            // MessageBox.Show(ManufacturerDL.getManufacturer(1).CompanyName.ToString());
             ProductDL.loadDataIntoList();
+            ProductShelfDL.loadIntoList();
+            ProductMovementDL.loadIntoList();
         }
         
         private void moveImageBox(object sender)

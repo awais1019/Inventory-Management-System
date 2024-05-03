@@ -41,12 +41,12 @@
             this.Searchbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.Add_Shelf_btn = new Guna.UI2.WinForms.Guna2Button();
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ShelfName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ShelfId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BlockName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CurrentCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AvailableCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BlockName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ShelfCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GridShelfs)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -80,12 +80,12 @@
             this.GridShelfs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.GridShelfs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
+            this.ShelfName,
             this.ShelfId,
+            this.BlockName,
             this.CurrentCapacity,
             this.AvailableCapacity,
-            this.TotalCapacity,
-            this.BlockName,
-            this.ShelfCategory});
+            this.TotalCapacity});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -255,6 +255,13 @@
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
+            // ShelfName
+            // 
+            this.ShelfName.HeaderText = "ShelfName";
+            this.ShelfName.MinimumWidth = 8;
+            this.ShelfName.Name = "ShelfName";
+            this.ShelfName.ReadOnly = true;
+            // 
             // ShelfId
             // 
             this.ShelfId.HeaderText = "Shelf Id";
@@ -263,6 +270,14 @@
             this.ShelfId.ReadOnly = true;
             this.ShelfId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ShelfId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ShelfId.Visible = false;
+            // 
+            // BlockName
+            // 
+            this.BlockName.HeaderText = "Block Name";
+            this.BlockName.MinimumWidth = 8;
+            this.BlockName.Name = "BlockName";
+            this.BlockName.ReadOnly = true;
             // 
             // CurrentCapacity
             // 
@@ -284,20 +299,6 @@
             this.TotalCapacity.MinimumWidth = 8;
             this.TotalCapacity.Name = "TotalCapacity";
             this.TotalCapacity.ReadOnly = true;
-            // 
-            // BlockName
-            // 
-            this.BlockName.HeaderText = "Block Name";
-            this.BlockName.MinimumWidth = 8;
-            this.BlockName.Name = "BlockName";
-            this.BlockName.ReadOnly = true;
-            // 
-            // ShelfCategory
-            // 
-            this.ShelfCategory.HeaderText = "Category";
-            this.ShelfCategory.MinimumWidth = 8;
-            this.ShelfCategory.Name = "ShelfCategory";
-            this.ShelfCategory.ReadOnly = true;
             // 
             // Storage_Control
             // 
@@ -324,11 +325,11 @@
         private Guna.UI2.WinForms.Guna2TextBox Searchbox;
         private Guna.UI2.WinForms.Guna2Button Add_Shelf_btn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ShelfName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ShelfId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BlockName;
         private System.Windows.Forms.DataGridViewTextBoxColumn CurrentCapacity;
         private System.Windows.Forms.DataGridViewTextBoxColumn AvailableCapacity;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalCapacity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BlockName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ShelfCategory;
     }
 }

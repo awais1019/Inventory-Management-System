@@ -63,6 +63,7 @@ namespace Inventory_Management_System.UserControls
             add_Products.Dock = DockStyle.Fill;
             searchbox.Visible = false;
             Delete_Product.Visible = false;
+            btnUpdate.Visible = false;
             panel2.Controls.Add(add_Products);
    
 
@@ -111,7 +112,10 @@ namespace Inventory_Management_System.UserControls
             List<int> products = selectedProduct();
             foreach (int i in products)
             {
-                
+                ProductMovementDL.deleteProductMovementIntoListbyPid(i);
+                ProductMovementDL.deleteProductMovementIntoDBbyPid(i);
+                ProductShelfDL.deleteProductShelfFromList(i);
+                ProductShelfDL.deleteProductShelfFromDBbyPid(i);
                 ProductDL.deleteFromList(i);
                 ProductDL.deleteFromDB(i);
             }
@@ -132,8 +136,30 @@ namespace Inventory_Management_System.UserControls
             Add_Product_btn.Visible = true;
             searchbox.Visible = true;
             Delete_Product.Visible = true;
-           
-           
+            btnUpdate.Visible = true;
+
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            List<int> sp = selectedProduct();
+            if (sp.Count == 1)
+            {
+                Add_Products add_Products = new Add_Products("update", sp[0]);
+                back_btn.Visible = true;
+                Add_Product_btn.Visible = false;
+                panel2.Controls.Clear();
+                add_Products.Dock = DockStyle.Fill;
+                searchbox.Visible = false;
+                Delete_Product.Visible = false;
+                btnUpdate.Visible = false;
+                panel2.Controls.Add(add_Products);
+            }
+            else
+            {
+                MessageBox.Show("Select Only one product to update!");
+            }
         }
     }
 }

@@ -21,34 +21,32 @@ namespace Inventory_Management_System.DL
         {
             try
             {
-                string query = @"
-            SET IDENTITY_INSERT Shelf ON;
-            INSERT INTO Shelf (ShelfId, Capacity, CurrentCapacity, ShelfName, BlockId) 
-            VALUES (@ShelfId, @Capacity, @CurrentCapacity, @ShelfName, @BlockId);
-            ";
-                // string query = "INSERT INTO Shelf (SET IDENTITY_INSERT Shelf ON; ShelfId, Capacity, CurrentCapacity, CategoryId, BlockId) VALUES (@ShelfId, @Capacity, @CurrentCapacity, @CategoryId, @BlockId)";
-                SqlCommand command = new SqlCommand(query, DatabaseManager.connection);
-                command.Parameters.AddWithValue("@ShelfId", shelf.shelfId);
+                SqlCommand command = new SqlCommand("spAddShelf", DatabaseManager.connection);
+                command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@Capacity", shelf.capacity);
                 command.Parameters.AddWithValue("@CurrentCapacity", shelf.currentCapacity);
-                command.Parameters.AddWithValue("@ShelfName", shelf.shelfName); 
+                command.Parameters.AddWithValue("@ShelfName", shelf.shelfName);
                 command.Parameters.AddWithValue("@BlockId", shelf.blockId);
-
-                int rowsAffected = command.ExecuteNonQuery();
-                if (rowsAffected > 0)
+                command.Parameters.Add("@ShelfId", SqlDbType.Int).Direction = ParameterDirection.Output;
+                command.ExecuteNonQuery();
+                int shelfId = Convert.ToInt32(command.Parameters["@ShelfId"].Value);
+                shelf.shelfId = shelfId;
+                shelves.Add(shelf);
+                if (shelfId > 0)
                 {
                     MessageBox.Show("Shelf added successfully.");
                 }
                 else
                 {
-                    MessageBox.Show("Failed to add Shelf.");
+                    MessageBox.Show("Failed to add shelf.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
+
         public static void loadIntoList()
         {
             try

@@ -21,5 +21,13 @@ namespace Inventory_Management_System.BL_Classes
             this.shelfName = shelfName;
             this.blockId = blockId;
         }
+        public Shelf(int capacity, int currentCapacity, string shelfName, int blockId)
+        {
+           
+            this.capacity = capacity;
+            this.currentCapacity = currentCapacity;
+            this.shelfName = shelfName;
+            this.blockId = blockId;
+        }
     }
 }

@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboShelf = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBlock = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.manufacturer_combo_box = new System.Windows.Forms.ComboBox();
             this.Add_btn = new Guna.UI2.WinForms.Guna2Button();
@@ -46,16 +50,14 @@
             this.category_combo_box = new System.Windows.Forms.ComboBox();
             this.gunastyles = new Guna.UI2.WinForms.Guna2Shapes();
             this.product_txtbox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboShelf = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBlock = new System.Windows.Forms.ComboBox();
+            this.btnUpdateProduct = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btnUpdateProduct);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.comboShelf);
             this.panel2.Controls.Add(this.label8);
@@ -82,6 +84,51 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(834, 540);
             this.panel2.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.label2.Location = new System.Drawing.Point(146, 401);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 28);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Shelf";
+            // 
+            // comboShelf
+            // 
+            this.comboShelf.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboShelf.FormattingEnabled = true;
+            this.comboShelf.Location = new System.Drawing.Point(353, 405);
+            this.comboShelf.Name = "comboShelf";
+            this.comboShelf.Size = new System.Drawing.Size(283, 28);
+            this.comboShelf.Sorted = true;
+            this.comboShelf.TabIndex = 35;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.label8.Location = new System.Drawing.Point(146, 350);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(76, 28);
+            this.label8.TabIndex = 34;
+            this.label8.Text = "Block";
+            // 
+            // comboBlock
+            // 
+            this.comboBlock.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBlock.FormattingEnabled = true;
+            this.comboBlock.Location = new System.Drawing.Point(353, 354);
+            this.comboBlock.Name = "comboBlock";
+            this.comboBlock.Size = new System.Drawing.Size(283, 28);
+            this.comboBlock.Sorted = true;
+            this.comboBlock.TabIndex = 33;
+            this.comboBlock.SelectedIndexChanged += new System.EventHandler(this.comboBlock_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -363,50 +410,25 @@
             this.product_txtbox.TabIndex = 15;
             this.product_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label2
+            // btnUpdateProduct
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            this.label2.Location = new System.Drawing.Point(146, 401);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 28);
-            this.label2.TabIndex = 36;
-            this.label2.Text = "Shelf";
-            // 
-            // comboShelf
-            // 
-            this.comboShelf.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboShelf.FormattingEnabled = true;
-            this.comboShelf.Location = new System.Drawing.Point(353, 405);
-            this.comboShelf.Name = "comboShelf";
-            this.comboShelf.Size = new System.Drawing.Size(283, 28);
-            this.comboShelf.Sorted = true;
-            this.comboShelf.TabIndex = 35;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            this.label8.Location = new System.Drawing.Point(146, 350);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 28);
-            this.label8.TabIndex = 34;
-            this.label8.Text = "Block";
-            // 
-            // comboBlock
-            // 
-            this.comboBlock.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBlock.FormattingEnabled = true;
-            this.comboBlock.Location = new System.Drawing.Point(353, 354);
-            this.comboBlock.Name = "comboBlock";
-            this.comboBlock.Size = new System.Drawing.Size(283, 28);
-            this.comboBlock.Sorted = true;
-            this.comboBlock.TabIndex = 33;
-            this.comboBlock.SelectedIndexChanged += new System.EventHandler(this.comboBlock_SelectedIndexChanged);
+            this.btnUpdateProduct.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUpdateProduct.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.btnUpdateProduct.BorderRadius = 5;
+            this.btnUpdateProduct.BorderThickness = 1;
+            this.btnUpdateProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdateProduct.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdateProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpdateProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpdateProduct.FillColor = System.Drawing.Color.White;
+            this.btnUpdateProduct.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnUpdateProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.btnUpdateProduct.Location = new System.Drawing.Point(408, 488);
+            this.btnUpdateProduct.Name = "btnUpdateProduct";
+            this.btnUpdateProduct.Size = new System.Drawing.Size(180, 45);
+            this.btnUpdateProduct.TabIndex = 37;
+            this.btnUpdateProduct.Text = "Update";
+            this.btnUpdateProduct.Click += new System.EventHandler(this.btnUpdateProduct_Click);
             // 
             // Add_Products
             // 
@@ -445,5 +467,6 @@
         private System.Windows.Forms.ComboBox comboShelf;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBlock;
+        private Guna.UI2.WinForms.Guna2Button btnUpdateProduct;
     }
 }
