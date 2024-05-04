@@ -20,6 +20,7 @@ namespace Inventory_Management_System.UserControls
         public string ProductName;
         public decimal PurchaseRate, SellRate, TotalValue;
         public DateTime AddedAt;
+        int ProductID;
         public Add_Products()
         {
             InitializeComponent();
@@ -44,7 +45,7 @@ namespace Inventory_Management_System.UserControls
             setUpdateValue(pid);
             btnUpdateProduct.Visible = true;
             Add_btn.Visible = false;
-          
+            ProductID = pid;
 
         }
         public void setUpdateValue(int pid)
@@ -122,29 +123,62 @@ namespace Inventory_Management_System.UserControls
             int manufacturerId = (int)manufacturer_combo_box.SelectedValue;
             int blockid = (int)comboBlock.SelectedValue;
             int shelfid = (int)comboShelf.SelectedValue;
-            //int pid = ProductDL.isProductAlreadyExist(productName, manufacturerId);
+            Product product = ProductDL.getProduct(ProductID);
 
             if (productName != null && purchaseRate != null && sellRate != null && quantity != null)
             {
                 decimal pr = decimal.Parse(purchaseRate);
                 int q = int.Parse(quantity);
                 decimal totalValue = pr * q;
-
-                Product p = new Product(manufacturerId, productName, CategoryId, pr, decimal.Parse(sellRate), q, 30, totalValue, DateTime.Now);
-                ProductDL.updateProductIntoList(p);
-                ProductDL.UpdateProductIntoDB(p);
-                int pid = p.ProductID;
-                if (pid == 0)
+                int previousQuantity = product.Quantity;
+                //Product p = new Product(manufacturerId, productName, CategoryId, pr, decimal.Parse(sellRate), q, 30, totalValue, DateTime.Now);
+                product.ManufacturerID = manufacturerId;
+                product.ProductName = productName;
+                product.SellRate = decimal.Parse(sellRate);
+                product.PurchaseRate = pr;
+                product.Quantity = q;
+                product.CategoryID = CategoryID;
+                product.totalValue = totalValue;
+                ProductDL.updateProductIntoList(product);
+                ProductDL.UpdateProductIntoDB(product);
+                List<int> shelfList = ProductShelfDL.getShelfIdbyPid(product.ProductID);
+                Shelf newshelf = ShelfDL.getShelf(shelfid);
+                bool isMatched = false;
+                for (int i = 0; i < shelfList.Count; i++)
                 {
-                    return;
+                    
+                    if (shelfList[i] == shelfid)
+                    {
+                        newshelf.currentCapacity = (newshelf.currentCapacity - previousQuantity) + q;
+                        ProductShelf ps = new ProductShelf(product.ProductID, shelfid, q);
+                        ProductShelfDL.updateProductShelfIntoList(ps);
+                        ProductShelfDL.updateProductShelfIntoDB(ps);
+                        isMatched = true;
+                    }
+                    else
+                    {
+                        Shelf prevShelf = ShelfDL.getShelf(shelfList[i]);
+                        prevShelf.currentCapacity -= previousQuantity;
+                        newshelf.currentCapacity += q;
+                        ShelfDL.updateShelfIntoList(prevShelf);
+                        ShelfDL.updateShelfIntoDB(prevShelf);
+                        ProductShelf ps = new ProductShelf(product.ProductID, shelfList[i], q);
+                        ProductShelfDL.deleteProductShelfFromList(product.ProductID, shelfList[i]);
+                        ProductShelfDL.deleteProductShelfFromDB(product.ProductID, shelfList[i]);
+                    }
+                    ShelfDL.updateShelfIntoList(newshelf);
+                    ShelfDL.updateShelfIntoDB(newshelf);
                 }
-                Shelf shelf = ShelfDL.getShelf(shelfid);
-                shelf.currentCapacity = shelf.currentCapacity + q;
-                ShelfDL.updateShelfIntoList(shelf);
-                ShelfDL.updateShelfIntoDB(shelf);
-                ProductShelf ps = new ProductShelf(pid, shelfid, q);
-                ProductShelfDL.updateProductShelfIntoList(ps);
-                ProductShelfDL.addIntoDB(ps);
+                if (!isMatched)
+                {
+                    ProductShelf ps = new ProductShelf(product.ProductID, shelfid, q);
+                    ProductShelfDL.addIntoList(ps);
+                    ProductShelfDL.addIntoDB(ps);
+                }
+
+                
+                
+               
                
 
             }

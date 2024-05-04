@@ -30,38 +30,37 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.GridProduct = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.CartGrid = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.GridProduct)).BeginInit();
+            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purchaseRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sellRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.manufacturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.CartGrid)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // GridProduct
+            // CartGrid
             // 
-            this.GridProduct.AllowUserToAddRows = false;
-            this.GridProduct.AllowUserToDeleteRows = false;
-            this.GridProduct.AllowUserToResizeColumns = false;
-            this.GridProduct.AllowUserToResizeRows = false;
+            this.CartGrid.AllowUserToAddRows = false;
+            this.CartGrid.AllowUserToDeleteRows = false;
+            this.CartGrid.AllowUserToResizeColumns = false;
+            this.CartGrid.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.GridProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.GridProduct.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.GridProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.GridProduct.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
+            this.CartGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.CartGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.CartGrid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CartGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(148)))), ((int)(((byte)(62)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
@@ -69,146 +68,140 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(148)))), ((int)(((byte)(62)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.GridProduct.ColumnHeadersHeight = 50;
-            this.GridProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.GridProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column7,
-            this.Column5,
-            this.Column6});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridProduct.DefaultCellStyle = dataGridViewCellStyle4;
-            this.GridProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridProduct.EnableHeadersVisualStyles = true;
-            this.GridProduct.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.GridProduct.Location = new System.Drawing.Point(0, 0);
-            this.GridProduct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.GridProduct.MultiSelect = false;
-            this.GridProduct.Name = "GridProduct";
-            this.GridProduct.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.GridProduct.RowHeadersVisible = false;
-            this.GridProduct.RowHeadersWidth = 100;
-            this.GridProduct.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.GridProduct.RowTemplate.Height = 25;
-            this.GridProduct.Size = new System.Drawing.Size(834, 540);
-            this.GridProduct.TabIndex = 56;
-            this.GridProduct.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(128)))), ((int)(((byte)(26)))));
-            this.GridProduct.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridProduct.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.White;
-            this.GridProduct.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Gray;
-            this.GridProduct.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.GridProduct.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.GridProduct.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.GridProduct.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(148)))), ((int)(((byte)(62)))));
-            this.GridProduct.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
-            this.GridProduct.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridProduct.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.GridProduct.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.GridProduct.ThemeStyle.HeaderStyle.Height = 50;
-            this.GridProduct.ThemeStyle.ReadOnly = true;
-            this.GridProduct.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.GridProduct.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.GridProduct.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridProduct.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(160)))));
-            this.GridProduct.ThemeStyle.RowsStyle.Height = 25;
-            this.GridProduct.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.Gray;
-            this.GridProduct.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CartGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.CartGrid.ColumnHeadersHeight = 50;
+            this.CartGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.CartGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productName,
+            this.ProductId,
+            this.purchaseRate,
+            this.sellRate,
+            this.quantity,
+            this.category,
+            this.manufacturer});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = false;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column1.FillWeight = 0.03353107F;
-            this.Column1.HeaderText = "";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 30;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 160.0426F;
-            this.Column2.HeaderText = "Name";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 160.2921F;
-            this.Column3.HeaderText = "Purchase Rate";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 160.192F;
-            this.Column4.HeaderText = "Sell Rate";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column7
-            // 
-            this.Column7.FillWeight = 160.1819F;
-            this.Column7.HeaderText = "Quantity";
-            this.Column7.MinimumWidth = 8;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 160.6189F;
-            this.Column5.HeaderText = "Category";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column6
-            // 
-            this.Column6.FillWeight = 160.6391F;
-            this.Column6.HeaderText = "Manufacturer";
-            this.Column6.MinimumWidth = 8;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.CartGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            this.CartGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CartGrid.EnableHeadersVisualStyles = true;
+            this.CartGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.CartGrid.Location = new System.Drawing.Point(0, 0);
+            this.CartGrid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CartGrid.MultiSelect = false;
+            this.CartGrid.Name = "CartGrid";
+            this.CartGrid.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CartGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.CartGrid.RowHeadersVisible = false;
+            this.CartGrid.RowHeadersWidth = 100;
+            this.CartGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.CartGrid.RowTemplate.Height = 25;
+            this.CartGrid.Size = new System.Drawing.Size(834, 540);
+            this.CartGrid.TabIndex = 56;
+            this.CartGrid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(128)))), ((int)(((byte)(26)))));
+            this.CartGrid.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CartGrid.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.White;
+            this.CartGrid.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Gray;
+            this.CartGrid.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.CartGrid.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.CartGrid.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.CartGrid.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(148)))), ((int)(((byte)(62)))));
+            this.CartGrid.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
+            this.CartGrid.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CartGrid.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.CartGrid.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.CartGrid.ThemeStyle.HeaderStyle.Height = 50;
+            this.CartGrid.ThemeStyle.ReadOnly = true;
+            this.CartGrid.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.CartGrid.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.CartGrid.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CartGrid.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(160)))));
+            this.CartGrid.ThemeStyle.RowsStyle.Height = 25;
+            this.CartGrid.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.Gray;
+            this.CartGrid.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.GridProduct);
+            this.panel2.Controls.Add(this.CartGrid);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(834, 540);
             this.panel2.TabIndex = 20;
+            // 
+            // productName
+            // 
+            this.productName.FillWeight = 160.0426F;
+            this.productName.HeaderText = "Name";
+            this.productName.MinimumWidth = 8;
+            this.productName.Name = "productName";
+            this.productName.ReadOnly = true;
+            this.productName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ProductId
+            // 
+            this.ProductId.HeaderText = "Column1";
+            this.ProductId.MinimumWidth = 8;
+            this.ProductId.Name = "ProductId";
+            this.ProductId.ReadOnly = true;
+            this.ProductId.Visible = false;
+            // 
+            // purchaseRate
+            // 
+            this.purchaseRate.FillWeight = 160.2921F;
+            this.purchaseRate.HeaderText = "Purchase Rate";
+            this.purchaseRate.MinimumWidth = 8;
+            this.purchaseRate.Name = "purchaseRate";
+            this.purchaseRate.ReadOnly = true;
+            this.purchaseRate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // sellRate
+            // 
+            this.sellRate.FillWeight = 160.192F;
+            this.sellRate.HeaderText = "Sell Rate";
+            this.sellRate.MinimumWidth = 8;
+            this.sellRate.Name = "sellRate";
+            this.sellRate.ReadOnly = true;
+            this.sellRate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // quantity
+            // 
+            this.quantity.FillWeight = 160.1819F;
+            this.quantity.HeaderText = "Quantity";
+            this.quantity.MinimumWidth = 8;
+            this.quantity.Name = "quantity";
+            this.quantity.ReadOnly = true;
+            this.quantity.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // category
+            // 
+            this.category.FillWeight = 160.6189F;
+            this.category.HeaderText = "Category";
+            this.category.MinimumWidth = 8;
+            this.category.Name = "category";
+            this.category.ReadOnly = true;
+            this.category.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // manufacturer
+            // 
+            this.manufacturer.FillWeight = 160.6391F;
+            this.manufacturer.HeaderText = "Manufacturer";
+            this.manufacturer.MinimumWidth = 8;
+            this.manufacturer.Name = "manufacturer";
+            this.manufacturer.ReadOnly = true;
+            this.manufacturer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // Cart_Control
             // 
@@ -217,7 +210,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "Cart_Control";
             this.Size = new System.Drawing.Size(834, 540);
-            ((System.ComponentModel.ISupportInitialize)(this.GridProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CartGrid)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -225,14 +218,14 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2DataGridView GridProduct;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private Guna.UI2.WinForms.Guna2DataGridView CartGrid;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purchaseRate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sellRate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn manufacturer;
     }
 }

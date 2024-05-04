@@ -14,6 +14,7 @@ namespace Inventory_Management_System.UserControls
 {
     public partial class Products_Control : UserControl
     {
+        public int shelfId;
         public Products_Control()
         {
             InitializeComponent();
@@ -102,6 +103,7 @@ namespace Inventory_Management_System.UserControls
                 if (isSelected)
                 {
                     int productId = Convert.ToInt32(row.Cells["ProductId"].Value);
+         
                     selectedProduct.Add(productId);
                 }
             }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -98,6 +99,17 @@ namespace Inventory_Management_System.DL
                 }
             }
         }
+        public static void deleteProductShelfFromList(int pid, int shelfid)
+        {
+            for (int i = productShelves.Count - 1; i >= 0; i--)
+            {
+                ProductShelf ps = productShelves[i];
+                if (ps.productId == pid && ps.shelfId == shelfid)
+                {
+                    productShelves.RemoveAt(i);
+                }
+            }
+        }
         public static void deleteProductShelfFromDBbyPid(int pid)
         {
             try
@@ -105,6 +117,21 @@ namespace Inventory_Management_System.DL
                 SqlCommand command = new SqlCommand("spDeleteProductShelfByProductId", DatabaseManager.connection);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@ProductId", pid);
+                int rowsAffected = command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+        public static void deleteProductShelfFromDB(int pid, int shelfId)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("spDeleteProductShelf", DatabaseManager.connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@ProductId", pid);
+                command.Parameters.AddWithValue("@ShelfId", shelfId);
                 int rowsAffected = command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -122,7 +149,36 @@ namespace Inventory_Management_System.DL
                 }
             }
         }
-        //public static void updateProductShelf
+        public static void updateProductShelfIntoDB(ProductShelf p)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("spUpdateProductShelf", DatabaseManager.connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@ProductId", p.productId);
+                command.Parameters.AddWithValue("@ShelfId", p.shelfId);
+                command.Parameters.AddWithValue("@Quantity", p.quantity);
+                int rowsAffected = command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+
+        public static List<int> getShelfIdbyPid(int pid)
+        {
+            List<int> shelfid = new List<int>();
+            int len = productShelves.Count;
+            for (int i = 0; i < len; i++)
+            {
+                if (productShelves[i].productId == pid)
+                {
+                    shelfid.Add(productShelves[i].shelfId);
+                }
+            }
+            return shelfid;
+        }
 
     }
 }

@@ -14,6 +14,19 @@ namespace Inventory_Management_System.DL
     public static class ProductDL
     {
         public static List<Product> products = new List<Product>();
+        public static List<Product> cartList = new List<Product>();
+        public static bool isAlreadyIntoCartList(Product p)
+        {
+            for (int i = 0;i < cartList.Count; i++)
+            {
+                if (cartList[i].ProductID == p.ProductID)
+                {
+                    cartList[i]= p;
+                    return true;
+                }
+            }
+            return false;
+        }
         public static void addIntoList(Product p)
         {
             products.Add(p);
