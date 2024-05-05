@@ -57,6 +57,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
             this.name_txt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTotalBill = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridProduct)).BeginInit();
@@ -66,6 +68,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.txtTotalBill);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.back_btn);
             this.panel1.Controls.Add(this.searchbox);
             this.panel1.Controls.Add(this.Check_Cart_btn);
@@ -380,6 +384,7 @@
             this.edit_btn.TabIndex = 79;
             this.edit_btn.Text = "Edit";
             this.edit_btn.Visible = false;
+            this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
             // Add_btn
             // 
@@ -509,6 +514,28 @@
             this.name_txt.TabIndex = 73;
             this.name_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // txtTotalBill
+            // 
+            this.txtTotalBill.AutoSize = true;
+            this.txtTotalBill.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalBill.ForeColor = System.Drawing.Color.Black;
+            this.txtTotalBill.Location = new System.Drawing.Point(347, 15);
+            this.txtTotalBill.Name = "txtTotalBill";
+            this.txtTotalBill.Size = new System.Drawing.Size(21, 23);
+            this.txtTotalBill.TabIndex = 64;
+            this.txtTotalBill.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(219, 11);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(112, 28);
+            this.label7.TabIndex = 63;
+            this.label7.Text = "Total Bill:";
+            // 
             // Dispatcher_Control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -520,6 +547,7 @@
             this.Name = "Dispatcher_Control";
             this.Size = new System.Drawing.Size(834, 602);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridProduct)).EndInit();
             this.status_bar_panel.ResumeLayout(false);
@@ -554,5 +582,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn category;
         private System.Windows.Forms.DataGridViewTextBoxColumn manufacturer;
+        private System.Windows.Forms.Label txtTotalBill;
+        private System.Windows.Forms.Label label7;
     }
 }

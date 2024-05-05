@@ -18,8 +18,12 @@ namespace Inventory_Management_System.UserControls
         {
             InitializeComponent();
             SetDataGridViewDataSource();
+            setCountManufacturer();
         }
-
+        private void setCountManufacturer()
+        {
+            count_manufacturer_label.Text = ManufacturerDL.manufacturers.Count.ToString();
+        }
         private void Add_Manufacturers_btn_Click(object sender, EventArgs e)
         {
             Add_Manufacturer_Control control = new Add_Manufacturer_Control();

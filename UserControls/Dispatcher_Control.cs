@@ -25,12 +25,25 @@ namespace Inventory_Management_System
         {
             InitializeComponent();
             setDataGridViewDataSource();
+            txtTotalBill.Visible = false;
+            label7.Visible = false;
             
         }
 
         private void back_btn_Click(object sender, EventArgs e)
         {
           ;
+        }
+        public void setTotalValue()
+        {
+            decimal totalValue = 0;
+            foreach (Product i in ProductDL.cartList)
+            {
+                totalValue += i.Quantity * i.SellRate;
+            }
+            txtTotalBill.Text = totalValue.ToString();
+            txtTotalBill.Visible = true;
+            label7.Visible = true;
         }
         private void selectedProduct()
         {
@@ -90,7 +103,7 @@ namespace Inventory_Management_System
             back_btn.Visible = true;
             searchbox.Visible = false;
             panel2.Controls.Clear();
-            Cart_Control control = new Cart_Control();
+            Cart_Control control = new Cart_Control(this);
             control.Dock = DockStyle.Fill;
             panel2.Controls.Add(control);
             edit_btn.Visible = true;
@@ -118,6 +131,8 @@ namespace Inventory_Management_System
             quantity_product_txtbox.Visible = true;
             label3.Visible = true;
             label4.Visible = true;
+            txtTotalBill.Visible = false;
+            label7.Visible = false;
         }
 
         private void Done_btn_Click_2(object sender, EventArgs e)
@@ -165,7 +180,10 @@ namespace Inventory_Management_System
         }
         public void setCartValue(int pid)
         {
-            name_txt.Text = "change";
+            Product p = ProductDL.getCart(pid);
+            name_txt.Text = p.ProductName;
+            quantity_product_txtbox.Text = p.Quantity.ToString();
+
         }
         
         private void Add_btn_Click(object sender, EventArgs e)
@@ -204,6 +222,25 @@ namespace Inventory_Management_System
                 return;
             }
             MessageBox.Show("Product Not Found");
+        }
+
+        private void edit_btn_Click(object sender, EventArgs e)
+        {
+            string quant = quantity_product_txtbox.Text;
+            int quantity = int.Parse(quant);
+            Product p = ProductDL.getProduct(prodId);
+            if (quantity < p.Quantity)
+            {
+                Product cart = ProductDL.getCart(prodId);
+                cart.Quantity = quantity;
+                MessageBox.Show("Edited Successfully");
+                return;
+            }
+            else if (quantity > p.Quantity || quantity == 0)
+            {
+                MessageBox.Show("Invalid Quantity");
+                return;
+            }
         }
     }
 }

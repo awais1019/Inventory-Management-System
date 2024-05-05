@@ -41,7 +41,7 @@
             this.ManufacturerId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status_bar_panel = new System.Windows.Forms.Panel();
-            this.count_students_label = new System.Windows.Forms.Label();
+            this.count_manufacturer_label = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -183,7 +183,7 @@
             // status_bar_panel
             // 
             this.status_bar_panel.BackColor = System.Drawing.Color.Transparent;
-            this.status_bar_panel.Controls.Add(this.count_students_label);
+            this.status_bar_panel.Controls.Add(this.count_manufacturer_label);
             this.status_bar_panel.Controls.Add(this.label7);
             this.status_bar_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.status_bar_panel.Location = new System.Drawing.Point(0, 577);
@@ -191,17 +191,17 @@
             this.status_bar_panel.Size = new System.Drawing.Size(834, 25);
             this.status_bar_panel.TabIndex = 59;
             // 
-            // count_students_label
+            // count_manufacturer_label
             // 
-            this.count_students_label.AutoSize = true;
-            this.count_students_label.Dock = System.Windows.Forms.DockStyle.Left;
-            this.count_students_label.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.count_students_label.ForeColor = System.Drawing.Color.Black;
-            this.count_students_label.Location = new System.Drawing.Point(163, 0);
-            this.count_students_label.Name = "count_students_label";
-            this.count_students_label.Size = new System.Drawing.Size(18, 19);
-            this.count_students_label.TabIndex = 9;
-            this.count_students_label.Text = "0";
+            this.count_manufacturer_label.AutoSize = true;
+            this.count_manufacturer_label.Dock = System.Windows.Forms.DockStyle.Left;
+            this.count_manufacturer_label.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.count_manufacturer_label.ForeColor = System.Drawing.Color.Black;
+            this.count_manufacturer_label.Location = new System.Drawing.Point(163, 0);
+            this.count_manufacturer_label.Name = "count_manufacturer_label";
+            this.count_manufacturer_label.Size = new System.Drawing.Size(18, 19);
+            this.count_manufacturer_label.TabIndex = 9;
+            this.count_manufacturer_label.Text = "0";
             // 
             // label7
             // 
@@ -348,7 +348,7 @@
 
         private Guna.UI2.WinForms.Guna2DataGridView GridManufacturer;
         private System.Windows.Forms.Panel status_bar_panel;
-        private System.Windows.Forms.Label count_students_label;
+        private System.Windows.Forms.Label count_manufacturer_label;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;

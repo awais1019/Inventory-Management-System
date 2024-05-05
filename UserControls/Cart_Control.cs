@@ -14,10 +14,13 @@ namespace Inventory_Management_System.UserControls
 {
     public partial class Cart_Control : UserControl
     {
-        public Cart_Control()
+        private Dispatcher_Control _dispatcherControl;
+        public Cart_Control(Dispatcher_Control dispatcherControl)
         {
             InitializeComponent();
             setCartGridDataSource();
+            _dispatcherControl = dispatcherControl;
+            _dispatcherControl.setTotalValue();
         }
         private void setCartGridDataSource()
         {
@@ -39,6 +42,7 @@ namespace Inventory_Management_System.UserControls
 
                     CartGrid.Rows[rowIndex].Cells["manufacturer"].Value = man.CompanyName;
                     CartGrid.Rows[rowIndex].Cells["ProductId"].Value = product.ProductID;
+                    CartGrid.Rows[rowIndex].Cells["TotalPrice"].Value = product.Quantity * product.SellRate;
 
                     // Apply cell styling
                     DataGridViewCellStyle cellStyle = new DataGridViewCellStyle();
@@ -61,10 +65,8 @@ namespace Inventory_Management_System.UserControls
             
             // Get the productId of the clicked row
             int productId = Convert.ToInt32(row.Cells["ProductId"].Value);
-            MessageBox.Show(productId.ToString());
             // Show the productId in a message box
-            Dispatcher_Control ds = new Dispatcher_Control();
-            ds.setCartValue(productId);
+            _dispatcherControl.setCartValue(productId);
 
 
         }

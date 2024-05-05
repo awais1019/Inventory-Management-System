@@ -76,15 +76,7 @@ namespace Inventory_Management_System.DL
                 int insertedProductId = Convert.ToInt32(command.Parameters["@ProductId"].Value);
                 p.ProductID = insertedProductId;
                 products.Add(p);
-                if (insertedProductId > 0)
-                {
-                    MessageBox.Show("Product added successfully.");
-                    return insertedProductId;
-                }
-                else
-                {
-                    MessageBox.Show("Failed to add product.");
-                }
+               
             }
             catch (Exception ex)
             {
@@ -168,14 +160,7 @@ namespace Inventory_Management_System.DL
                 // Execute the DELETE command
                 int rowsAffected = command.ExecuteNonQuery();
 
-                if (rowsAffected > 0)
-                {
-                    MessageBox.Show("deleted");
-                }
-                else
-                {
-                    MessageBox.Show($"product with ID {id} not found.");
-                }
+              
             }
             catch (Exception ex)
             {
@@ -229,14 +214,7 @@ namespace Inventory_Management_System.DL
                 // Execute the UPDATE command
                 int rowsAffected = command.ExecuteNonQuery();
 
-                if (rowsAffected > 0)
-                {
-                    MessageBox.Show("Product updated successfully.");
-                }
-                else
-                {
-                    MessageBox.Show("Failed to update product.");
-                }
+              
             }
             catch (Exception ex)
             {

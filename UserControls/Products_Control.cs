@@ -19,6 +19,11 @@ namespace Inventory_Management_System.UserControls
         {
             InitializeComponent();
             setDataGridViewDataSource();
+            setProductCount();
+        }
+        private void setProductCount()
+        {
+            count_students_label.Text = ProductDL.products.Count.ToString();
         }
         private void setDataGridViewDataSource()
         {

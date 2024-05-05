@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CartGrid = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.purchaseRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,7 +41,7 @@
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.manufacturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.CartGrid)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -78,7 +79,8 @@
             this.sellRate,
             this.quantity,
             this.category,
-            this.manufacturer});
+            this.manufacturer,
+            this.TotalPrice});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -131,6 +133,16 @@
             this.CartGrid.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.Gray;
             this.CartGrid.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             this.CartGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CartGrid_CellClick);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.CartGrid);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(834, 540);
+            this.panel2.TabIndex = 20;
             // 
             // productName
             // 
@@ -194,15 +206,12 @@
             this.manufacturer.ReadOnly = true;
             this.manufacturer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // panel2
+            // TotalPrice
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.CartGrid);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 540);
-            this.panel2.TabIndex = 20;
+            this.TotalPrice.HeaderText = "Total Price";
+            this.TotalPrice.MinimumWidth = 8;
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.ReadOnly = true;
             // 
             // Cart_Control
             // 
@@ -228,5 +237,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn category;
         private System.Windows.Forms.DataGridViewTextBoxColumn manufacturer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
     }
 }

@@ -230,14 +230,19 @@ namespace Inventory_Management_System.UserControls
                 int q = int.Parse(quantity);
                 decimal totalValue = pr * q;
            
+                Shelf shelf = ShelfDL.getShelf(shelfid);
+                shelf.currentCapacity = shelf.currentCapacity + q;
+                if (shelf.capacity - shelf.currentCapacity < q)
+                {
+                    MessageBox.Show("Selected Shelf has less capacity");
+                    return;
+                }
                 Product p = new Product(manufacturerId, productName, CategoryId, pr, decimal.Parse(sellRate), q, 30, totalValue, DateTime.Now);
                 int pid = ProductDL.addIntoDB(p);
                 if (pid == 0)
                 {
                     return;
                 }
-                Shelf shelf = ShelfDL.getShelf(shelfid);
-                shelf.currentCapacity = shelf.currentCapacity + q;
                 ShelfDL.updateShelfIntoList(shelf);
                 ShelfDL.updateShelfIntoDB(shelf);
                 ProductShelf ps = new ProductShelf(pid, shelfid, q);
@@ -245,6 +250,7 @@ namespace Inventory_Management_System.UserControls
                 ProductShelfDL.addIntoDB(ps);
                 ProductMovement pm = new ProductMovement(pid, q, "IN", DateTime.Now);
                 ProductMovementDL.addIntoDB(pm);
+                MessageBox.Show("Product Added Successfully");
                
             }
 
