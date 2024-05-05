@@ -154,6 +154,7 @@
             this.capacity_txtbox.Size = new System.Drawing.Size(307, 29);
             this.capacity_txtbox.TabIndex = 27;
             this.capacity_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.capacity_txtbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.capacity_txtbox_KeyPress);
             // 
             // label1
             // 

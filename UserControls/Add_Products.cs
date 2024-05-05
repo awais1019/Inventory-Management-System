@@ -184,6 +184,12 @@ namespace Inventory_Management_System.UserControls
             }
         }
 
+        private void prate_txtbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
         private void setCategoryComboBox()
         {
             CategoryDL.categories.Sort((x, y) => string.Compare(x.CategoryName, y.CategoryName));

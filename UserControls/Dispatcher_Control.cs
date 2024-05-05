@@ -242,5 +242,11 @@ namespace Inventory_Management_System
                 return;
             }
         }
+
+        private void quantity_product_txtbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
     }
 }

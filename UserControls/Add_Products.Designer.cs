@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnUpdateProduct = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.comboShelf = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.category_combo_box = new System.Windows.Forms.ComboBox();
             this.gunastyles = new Guna.UI2.WinForms.Guna2Shapes();
             this.product_txtbox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnUpdateProduct = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +84,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(834, 540);
             this.panel2.TabIndex = 18;
+            // 
+            // btnUpdateProduct
+            // 
+            this.btnUpdateProduct.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUpdateProduct.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.btnUpdateProduct.BorderRadius = 5;
+            this.btnUpdateProduct.BorderThickness = 1;
+            this.btnUpdateProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdateProduct.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdateProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpdateProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpdateProduct.FillColor = System.Drawing.Color.White;
+            this.btnUpdateProduct.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnUpdateProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.btnUpdateProduct.Location = new System.Drawing.Point(408, 488);
+            this.btnUpdateProduct.Name = "btnUpdateProduct";
+            this.btnUpdateProduct.Size = new System.Drawing.Size(180, 45);
+            this.btnUpdateProduct.TabIndex = 37;
+            this.btnUpdateProduct.Text = "Update";
+            this.btnUpdateProduct.Click += new System.EventHandler(this.btnUpdateProduct_Click);
             // 
             // label2
             // 
@@ -237,6 +257,7 @@
             this.quantity_txtbox.Size = new System.Drawing.Size(307, 29);
             this.quantity_txtbox.TabIndex = 27;
             this.quantity_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.quantity_txtbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.prate_txtbox_KeyPress);
             // 
             // label4
             // 
@@ -291,6 +312,7 @@
             this.prate_txtbox.Size = new System.Drawing.Size(307, 29);
             this.prate_txtbox.TabIndex = 24;
             this.prate_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.prate_txtbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.prate_txtbox_KeyPress);
             // 
             // label3
             // 
@@ -345,6 +367,7 @@
             this.sale_rate_txtbox.Size = new System.Drawing.Size(307, 29);
             this.sale_rate_txtbox.TabIndex = 21;
             this.sale_rate_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.sale_rate_txtbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.prate_txtbox_KeyPress);
             // 
             // label1
             // 
@@ -409,26 +432,6 @@
             this.product_txtbox.Size = new System.Drawing.Size(307, 29);
             this.product_txtbox.TabIndex = 15;
             this.product_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnUpdateProduct
-            // 
-            this.btnUpdateProduct.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnUpdateProduct.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            this.btnUpdateProduct.BorderRadius = 5;
-            this.btnUpdateProduct.BorderThickness = 1;
-            this.btnUpdateProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpdateProduct.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpdateProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUpdateProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUpdateProduct.FillColor = System.Drawing.Color.White;
-            this.btnUpdateProduct.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnUpdateProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            this.btnUpdateProduct.Location = new System.Drawing.Point(408, 488);
-            this.btnUpdateProduct.Name = "btnUpdateProduct";
-            this.btnUpdateProduct.Size = new System.Drawing.Size(180, 45);
-            this.btnUpdateProduct.TabIndex = 37;
-            this.btnUpdateProduct.Text = "Update";
-            this.btnUpdateProduct.Click += new System.EventHandler(this.btnUpdateProduct_Click);
             // 
             // Add_Products
             // 

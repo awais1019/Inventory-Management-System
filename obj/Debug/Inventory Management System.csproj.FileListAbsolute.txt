@@ -1,7 +1,6 @@
 D:\DB-Theory-Project\Inventory Management System\bin\Debug\Inventory Management System.exe.config
 D:\DB-Theory-Project\Inventory Management System\bin\Debug\Inventory Management System.exe
 D:\DB-Theory-Project\Inventory Management System\bin\Debug\Inventory Management System.pdb
-D:\DB-Theory-Project\Inventory Management System\bin\Debug\Bunifu_UI_v1.5.3.dll
 D:\DB-Theory-Project\Inventory Management System\bin\Debug\Guna.UI2.dll
 D:\DB-Theory-Project\Inventory Management System\bin\Debug\Bunifu_UI_v1.5.3.xml
 D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory Management System.csproj.AssemblyReference.cache
@@ -68,3 +67,5 @@ D:\DataBase\Inventory-Management-System\obj\Debug\Inventory_Management_System.Us
 D:\DataBase\Inventory-Management-System\obj\Debug\Inventory_Management_System.UserControls.History_Control.resources
 D:\DataBase\Inventory-Management-System\obj\Debug\Inventory_Management_System.UserControls.Storage_Control.resources
 D:\DataBase\Inventory-Management-System\obj\Debug\Inventory_Management_System.UserControls.Transportation_Control.resources
+D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory_Management_System.UserControls.Product_Movement_Card.resources
+D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory_Management_System.UserControls.Threshold_Card.resources

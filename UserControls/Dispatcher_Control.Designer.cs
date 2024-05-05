@@ -34,6 +34,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtTotalBill = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.back_btn = new Guna.UI2.WinForms.Guna2Button();
             this.searchbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.Check_Cart_btn = new Guna.UI2.WinForms.Guna2Button();
@@ -57,8 +59,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
             this.name_txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtTotalBill = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridProduct)).BeginInit();
@@ -78,6 +78,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(834, 50);
             this.panel1.TabIndex = 58;
+            // 
+            // txtTotalBill
+            // 
+            this.txtTotalBill.AutoSize = true;
+            this.txtTotalBill.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalBill.ForeColor = System.Drawing.Color.Black;
+            this.txtTotalBill.Location = new System.Drawing.Point(347, 15);
+            this.txtTotalBill.Name = "txtTotalBill";
+            this.txtTotalBill.Size = new System.Drawing.Size(21, 23);
+            this.txtTotalBill.TabIndex = 64;
+            this.txtTotalBill.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(219, 11);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(112, 28);
+            this.label7.TabIndex = 63;
+            this.label7.Text = "Total Bill:";
             // 
             // back_btn
             // 
@@ -459,6 +481,7 @@
             this.quantity_product_txtbox.Size = new System.Drawing.Size(286, 29);
             this.quantity_product_txtbox.TabIndex = 76;
             this.quantity_product_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.quantity_product_txtbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.quantity_product_txtbox_KeyPress);
             // 
             // label3
             // 
@@ -513,28 +536,6 @@
             this.name_txt.Size = new System.Drawing.Size(307, 29);
             this.name_txt.TabIndex = 73;
             this.name_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtTotalBill
-            // 
-            this.txtTotalBill.AutoSize = true;
-            this.txtTotalBill.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalBill.ForeColor = System.Drawing.Color.Black;
-            this.txtTotalBill.Location = new System.Drawing.Point(347, 15);
-            this.txtTotalBill.Name = "txtTotalBill";
-            this.txtTotalBill.Size = new System.Drawing.Size(21, 23);
-            this.txtTotalBill.TabIndex = 64;
-            this.txtTotalBill.Text = "0";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(219, 11);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 28);
-            this.label7.TabIndex = 63;
-            this.label7.Text = "Total Bill:";
             // 
             // Dispatcher_Control
             // 

@@ -9,7 +9,7 @@ namespace Inventory_Management_System.BL_Classes
 {
     public static class DatabaseManager                
     {
-        public static string connectionString = "Data Source=DESKTOP-45QI6CK;Initial Catalog=Inventory;Integrated Security=True;Encrypt=False";
+        public static string connectionString = "Data Source=AWAIS-LAPTOP;Initial Catalog=Inventory;Integrated Security=True;Encrypt=False";
         public static SqlConnection connection;
         public static void openConnection()
         {

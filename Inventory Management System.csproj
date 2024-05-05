@@ -148,11 +148,23 @@
     <Compile Include="UserControls\Products_Control.Designer.cs">
       <DependentUpon>Products_Control.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Product_Movement_Card.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Product_Movement_Card.Designer.cs">
+      <DependentUpon>Product_Movement_Card.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Storage_Control.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\Storage_Control.Designer.cs">
       <DependentUpon>Storage_Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Threshold_Card.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Threshold_Card.Designer.cs">
+      <DependentUpon>Threshold_Card.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Transportation_Control.cs">
       <SubType>UserControl</SubType>
@@ -203,8 +215,14 @@
     <EmbeddedResource Include="UserControls\Products_Control.resx">
       <DependentUpon>Products_Control.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Product_Movement_Card.resx">
+      <DependentUpon>Product_Movement_Card.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Storage_Control.resx">
       <DependentUpon>Storage_Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Threshold_Card.resx">
+      <DependentUpon>Threshold_Card.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Transportation_Control.resx">
       <DependentUpon>Transportation_Control.cs</DependentUpon>
