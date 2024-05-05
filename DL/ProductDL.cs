@@ -27,6 +27,29 @@ namespace Inventory_Management_System.DL
             }
             return false;
         }
+        public static bool deleteFromCartList(int pid)
+        {
+            for (int i = 0; i < cartList.Count;i++)
+            {
+                if (cartList[i].ProductID == pid)
+                {
+                    cartList.RemoveAt(i);
+                    return true;
+                }
+            }
+            return false;
+        }
+        public static Product getCart(int pid)
+        {
+            for (int i = 0; i < cartList.Count;i ++)
+            {
+                if (cartList[i].ProductID == pid)
+                {
+                    return cartList[i];
+                }
+            }
+            return null;
+        }
         public static void addIntoList(Product p)
         {
             products.Add(p);

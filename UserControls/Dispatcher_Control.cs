@@ -19,7 +19,7 @@ namespace Inventory_Management_System
 
     public partial class Dispatcher_Control : UserControl
     {
-        public int prodId;
+        public static int prodId;
  
         public Dispatcher_Control()
         {
@@ -155,7 +155,7 @@ namespace Inventory_Management_System
             // Show the productId in a message box
             setValue(productId);
         }
-        private void setValue(int pid)
+        public void setValue(int pid)
         {
             Product p = ProductDL.getProduct(pid);
             name_txt.Text = p.ProductName;
@@ -163,31 +163,47 @@ namespace Inventory_Management_System
             
             
         }
-
+        public void setCartValue(int pid)
+        {
+            name_txt.Text = "change";
+        }
+        
         private void Add_btn_Click(object sender, EventArgs e)
         {
             
             string quantity = quantity_product_txtbox.Text;
             Product p = ProductDL.getProduct(prodId);
 
-            if (quantity != null)
+            if (quantity != null && p != null)
             {
                 int quant = int.Parse(quantity);
                 
                 if (quant <= p.Quantity)
                 {
                     
-                    //Product newP = new Product(p.ProductID, p.ProductName, p.CategoryID, p.PurchaseRate, p.SellRate, p.Quantity, p.ThresholdQuantity, p.to)
-                    if (ProductDL.isAlreadyIntoCartList(p))
+                    Product newP = new Product(p.ProductID, p.ManufacturerID, p.ProductName, p.CategoryID, p.PurchaseRate, p.SellRate, quant, p.ThresholdQuantity, quant * p.SellRate, p.AddedAt);
+                    if (ProductDL.isAlreadyIntoCartList(newP))
                     {
-                        MessageBox.Show("Product Added Successfully");
+                        MessageBox.Show("Product Updated Successfully");
                         return;
                     }
-                    ProductDL.cartList.Add(p);
+                    ProductDL.cartList.Add(newP);
                     MessageBox.Show("Product Added Successfully");
+                   
                 }
 
             }
+        }
+
+        private void delete_btn_Click(object sender, EventArgs e)
+        {
+            
+            if (ProductDL.deleteFromCartList(prodId))
+            {
+                MessageBox.Show("Deleted Successfully");
+                return;
+            }
+            MessageBox.Show("Product Not Found");
         }
     }
 }

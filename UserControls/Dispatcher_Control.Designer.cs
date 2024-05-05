@@ -39,6 +39,13 @@
             this.Check_Cart_btn = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.GridProduct = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purchaseRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sellRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.manufacturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status_bar_panel = new System.Windows.Forms.Panel();
             this.Done_btn = new Guna.UI2.WinForms.Guna2Button();
             this.delete_btn = new Guna.UI2.WinForms.Guna2Button();
@@ -50,13 +57,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
             this.name_txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.purchaseRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sellRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.manufacturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridProduct)).BeginInit();
@@ -238,6 +238,68 @@
             this.GridProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridProduct_CellClick);
             this.GridProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridProduct_CellContentClick);
             // 
+            // ProductId
+            // 
+            this.ProductId.HeaderText = "Column2";
+            this.ProductId.MinimumWidth = 8;
+            this.ProductId.Name = "ProductId";
+            this.ProductId.ReadOnly = true;
+            this.ProductId.Visible = false;
+            // 
+            // productName
+            // 
+            this.productName.FillWeight = 160.0426F;
+            this.productName.HeaderText = "Name";
+            this.productName.MinimumWidth = 8;
+            this.productName.Name = "productName";
+            this.productName.ReadOnly = true;
+            this.productName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // purchaseRate
+            // 
+            this.purchaseRate.FillWeight = 160.2921F;
+            this.purchaseRate.HeaderText = "Purchase Rate";
+            this.purchaseRate.MinimumWidth = 8;
+            this.purchaseRate.Name = "purchaseRate";
+            this.purchaseRate.ReadOnly = true;
+            this.purchaseRate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // sellRate
+            // 
+            this.sellRate.FillWeight = 160.192F;
+            this.sellRate.HeaderText = "Sell Rate";
+            this.sellRate.MinimumWidth = 8;
+            this.sellRate.Name = "sellRate";
+            this.sellRate.ReadOnly = true;
+            this.sellRate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // quantity
+            // 
+            this.quantity.FillWeight = 160.1819F;
+            this.quantity.HeaderText = "Quantity";
+            this.quantity.MinimumWidth = 8;
+            this.quantity.Name = "quantity";
+            this.quantity.ReadOnly = true;
+            this.quantity.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // category
+            // 
+            this.category.FillWeight = 160.6189F;
+            this.category.HeaderText = "Category";
+            this.category.MinimumWidth = 8;
+            this.category.Name = "category";
+            this.category.ReadOnly = true;
+            this.category.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // manufacturer
+            // 
+            this.manufacturer.FillWeight = 160.6391F;
+            this.manufacturer.HeaderText = "Manufacturer";
+            this.manufacturer.MinimumWidth = 8;
+            this.manufacturer.Name = "manufacturer";
+            this.manufacturer.ReadOnly = true;
+            this.manufacturer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
             // status_bar_panel
             // 
             this.status_bar_panel.BackColor = System.Drawing.Color.White;
@@ -297,6 +359,7 @@
             this.delete_btn.TabIndex = 80;
             this.delete_btn.Text = "Delete";
             this.delete_btn.Visible = false;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
             // edit_btn
             // 
@@ -445,68 +508,6 @@
             this.name_txt.Size = new System.Drawing.Size(307, 29);
             this.name_txt.TabIndex = 73;
             this.name_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // ProductId
-            // 
-            this.ProductId.HeaderText = "Column2";
-            this.ProductId.MinimumWidth = 8;
-            this.ProductId.Name = "ProductId";
-            this.ProductId.ReadOnly = true;
-            this.ProductId.Visible = false;
-            // 
-            // productName
-            // 
-            this.productName.FillWeight = 160.0426F;
-            this.productName.HeaderText = "Name";
-            this.productName.MinimumWidth = 8;
-            this.productName.Name = "productName";
-            this.productName.ReadOnly = true;
-            this.productName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // purchaseRate
-            // 
-            this.purchaseRate.FillWeight = 160.2921F;
-            this.purchaseRate.HeaderText = "Purchase Rate";
-            this.purchaseRate.MinimumWidth = 8;
-            this.purchaseRate.Name = "purchaseRate";
-            this.purchaseRate.ReadOnly = true;
-            this.purchaseRate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // sellRate
-            // 
-            this.sellRate.FillWeight = 160.192F;
-            this.sellRate.HeaderText = "Sell Rate";
-            this.sellRate.MinimumWidth = 8;
-            this.sellRate.Name = "sellRate";
-            this.sellRate.ReadOnly = true;
-            this.sellRate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // quantity
-            // 
-            this.quantity.FillWeight = 160.1819F;
-            this.quantity.HeaderText = "Quantity";
-            this.quantity.MinimumWidth = 8;
-            this.quantity.Name = "quantity";
-            this.quantity.ReadOnly = true;
-            this.quantity.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // category
-            // 
-            this.category.FillWeight = 160.6189F;
-            this.category.HeaderText = "Category";
-            this.category.MinimumWidth = 8;
-            this.category.Name = "category";
-            this.category.ReadOnly = true;
-            this.category.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // manufacturer
-            // 
-            this.manufacturer.FillWeight = 160.6391F;
-            this.manufacturer.HeaderText = "Manufacturer";
-            this.manufacturer.MinimumWidth = 8;
-            this.manufacturer.Name = "manufacturer";
-            this.manufacturer.ReadOnly = true;
-            this.manufacturer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // Dispatcher_Control
             // 

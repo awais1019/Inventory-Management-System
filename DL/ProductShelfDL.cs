@@ -18,6 +18,17 @@ namespace Inventory_Management_System.DL
         {
             productShelves.Add(p);
         }
+        public static ProductShelf getProductShelf(int pid, int shelfid)
+        {
+            for (int i = 0; i < productShelves.Count; i++)
+            {
+                if (productShelves[i].productId == pid && productShelves[i].shelfId == shelfid)
+                {
+                    return productShelves[i];
+                }
+            }
+            return null;
+        }
         public static void loadIntoList()
         {
             try

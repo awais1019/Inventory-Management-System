@@ -70,9 +70,12 @@
     <Compile Include="BL_Classes\Transportation.cs" />
     <Compile Include="BL_Classes\Warehouse.cs" />
     <Compile Include="DL\BlockDL.cs" />
+    <Compile Include="DL\DispatchDetailDL.cs" />
+    <Compile Include="DL\DispatchDL.cs" />
     <Compile Include="DL\ProductMovementDL.cs" />
     <Compile Include="DL\ProductShelfDL.cs" />
     <Compile Include="DL\ShelfDL.cs" />
+    <Compile Include="DL\TransportationDL.cs" />
     <Compile Include="DL\WarehouseDL.cs" />
     <Compile Include="UserControls\Dispatcher_Control.cs">
       <SubType>UserControl</SubType>

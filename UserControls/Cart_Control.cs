@@ -53,5 +53,21 @@ namespace Inventory_Management_System.UserControls
 
             }
         }
+
+        private void CartGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Get the clicked row
+            DataGridViewRow row = CartGrid.Rows[e.RowIndex];
+            
+            // Get the productId of the clicked row
+            int productId = Convert.ToInt32(row.Cells["ProductId"].Value);
+            MessageBox.Show(productId.ToString());
+            // Show the productId in a message box
+            Dispatcher_Control ds = new Dispatcher_Control();
+            ds.setCartValue(productId);
+
+
+        }
+       
     }
 }

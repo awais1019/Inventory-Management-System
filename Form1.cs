@@ -29,6 +29,9 @@ namespace Inventory_Management_System
             ProductDL.loadDataIntoList();
             ProductShelfDL.loadIntoList();
             ProductMovementDL.loadIntoList();
+            TransportationDL.loadIntoList();
+            DispatchDL.loadIntoList();
+            DispatchDetailDL.loadIntoList();
         }
         
         private void moveImageBox(object sender)

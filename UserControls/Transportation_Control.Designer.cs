@@ -32,16 +32,16 @@
             this.Confirm_btn = new Guna.UI2.WinForms.Guna2Button();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2Shapes5 = new Guna.UI2.WinForms.Guna2Shapes();
-            this.quantity_txtbox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtArrival = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Shapes4 = new Guna.UI2.WinForms.Guna2Shapes();
-            this.prate_txtbox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtDriver = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Shapes3 = new Guna.UI2.WinForms.Guna2Shapes();
-            this.sale_rate_txtbox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtDeparture = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
-            this.product_txtbox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtVehicle = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,16 +51,16 @@
             this.panel2.Controls.Add(this.Confirm_btn);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.guna2Shapes5);
-            this.panel2.Controls.Add(this.quantity_txtbox);
+            this.panel2.Controls.Add(this.txtArrival);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.guna2Shapes4);
-            this.panel2.Controls.Add(this.prate_txtbox);
+            this.panel2.Controls.Add(this.txtDriver);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.guna2Shapes3);
-            this.panel2.Controls.Add(this.sale_rate_txtbox);
+            this.panel2.Controls.Add(this.txtDeparture);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.guna2Shapes1);
-            this.panel2.Controls.Add(this.product_txtbox);
+            this.panel2.Controls.Add(this.txtVehicle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -85,6 +85,7 @@
             this.Confirm_btn.Size = new System.Drawing.Size(180, 45);
             this.Confirm_btn.TabIndex = 31;
             this.Confirm_btn.Text = "Confirm";
+            this.Confirm_btn.Click += new System.EventHandler(this.Confirm_btn_Click);
             // 
             // label5
             // 
@@ -113,32 +114,32 @@
             this.guna2Shapes5.Text = "guna2Shapes5";
             this.guna2Shapes5.Zoom = 80;
             // 
-            // quantity_txtbox
+            // txtArrival
             // 
-            this.quantity_txtbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.quantity_txtbox.BorderColor = System.Drawing.Color.White;
-            this.quantity_txtbox.BorderThickness = 0;
-            this.quantity_txtbox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.quantity_txtbox.DefaultText = "";
-            this.quantity_txtbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.quantity_txtbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.quantity_txtbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.quantity_txtbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.quantity_txtbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.quantity_txtbox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.quantity_txtbox.ForeColor = System.Drawing.Color.Black;
-            this.quantity_txtbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.quantity_txtbox.Location = new System.Drawing.Point(350, 333);
-            this.quantity_txtbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.quantity_txtbox.Name = "quantity_txtbox";
-            this.quantity_txtbox.PasswordChar = '\0';
-            this.quantity_txtbox.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.quantity_txtbox.PlaceholderText = "Sialkot";
-            this.quantity_txtbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.quantity_txtbox.SelectedText = "";
-            this.quantity_txtbox.Size = new System.Drawing.Size(307, 29);
-            this.quantity_txtbox.TabIndex = 27;
-            this.quantity_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtArrival.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtArrival.BorderColor = System.Drawing.Color.White;
+            this.txtArrival.BorderThickness = 0;
+            this.txtArrival.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtArrival.DefaultText = "";
+            this.txtArrival.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtArrival.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtArrival.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtArrival.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtArrival.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtArrival.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtArrival.ForeColor = System.Drawing.Color.Black;
+            this.txtArrival.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtArrival.Location = new System.Drawing.Point(350, 333);
+            this.txtArrival.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtArrival.Name = "txtArrival";
+            this.txtArrival.PasswordChar = '\0';
+            this.txtArrival.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtArrival.PlaceholderText = "Sialkot";
+            this.txtArrival.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtArrival.SelectedText = "";
+            this.txtArrival.Size = new System.Drawing.Size(307, 29);
+            this.txtArrival.TabIndex = 27;
+            this.txtArrival.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -167,32 +168,32 @@
             this.guna2Shapes4.Text = "guna2Shapes4";
             this.guna2Shapes4.Zoom = 80;
             // 
-            // prate_txtbox
+            // txtDriver
             // 
-            this.prate_txtbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.prate_txtbox.BorderColor = System.Drawing.Color.White;
-            this.prate_txtbox.BorderThickness = 0;
-            this.prate_txtbox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.prate_txtbox.DefaultText = "";
-            this.prate_txtbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.prate_txtbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.prate_txtbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.prate_txtbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.prate_txtbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.prate_txtbox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.prate_txtbox.ForeColor = System.Drawing.Color.Black;
-            this.prate_txtbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.prate_txtbox.Location = new System.Drawing.Point(354, 171);
-            this.prate_txtbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.prate_txtbox.Name = "prate_txtbox";
-            this.prate_txtbox.PasswordChar = '\0';
-            this.prate_txtbox.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.prate_txtbox.PlaceholderText = "Bota";
-            this.prate_txtbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.prate_txtbox.SelectedText = "";
-            this.prate_txtbox.Size = new System.Drawing.Size(307, 29);
-            this.prate_txtbox.TabIndex = 24;
-            this.prate_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDriver.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtDriver.BorderColor = System.Drawing.Color.White;
+            this.txtDriver.BorderThickness = 0;
+            this.txtDriver.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDriver.DefaultText = "";
+            this.txtDriver.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDriver.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDriver.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDriver.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDriver.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDriver.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDriver.ForeColor = System.Drawing.Color.Black;
+            this.txtDriver.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDriver.Location = new System.Drawing.Point(354, 171);
+            this.txtDriver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDriver.Name = "txtDriver";
+            this.txtDriver.PasswordChar = '\0';
+            this.txtDriver.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtDriver.PlaceholderText = "Bota";
+            this.txtDriver.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtDriver.SelectedText = "";
+            this.txtDriver.Size = new System.Drawing.Size(307, 29);
+            this.txtDriver.TabIndex = 24;
+            this.txtDriver.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -221,32 +222,32 @@
             this.guna2Shapes3.Text = "guna2Shapes3";
             this.guna2Shapes3.Zoom = 80;
             // 
-            // sale_rate_txtbox
+            // txtDeparture
             // 
-            this.sale_rate_txtbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.sale_rate_txtbox.BorderColor = System.Drawing.Color.White;
-            this.sale_rate_txtbox.BorderThickness = 0;
-            this.sale_rate_txtbox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.sale_rate_txtbox.DefaultText = "";
-            this.sale_rate_txtbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.sale_rate_txtbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.sale_rate_txtbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.sale_rate_txtbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.sale_rate_txtbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.sale_rate_txtbox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.sale_rate_txtbox.ForeColor = System.Drawing.Color.Black;
-            this.sale_rate_txtbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.sale_rate_txtbox.Location = new System.Drawing.Point(354, 254);
-            this.sale_rate_txtbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.sale_rate_txtbox.Name = "sale_rate_txtbox";
-            this.sale_rate_txtbox.PasswordChar = '\0';
-            this.sale_rate_txtbox.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.sale_rate_txtbox.PlaceholderText = "Lahore";
-            this.sale_rate_txtbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.sale_rate_txtbox.SelectedText = "";
-            this.sale_rate_txtbox.Size = new System.Drawing.Size(307, 29);
-            this.sale_rate_txtbox.TabIndex = 21;
-            this.sale_rate_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDeparture.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtDeparture.BorderColor = System.Drawing.Color.White;
+            this.txtDeparture.BorderThickness = 0;
+            this.txtDeparture.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDeparture.DefaultText = "";
+            this.txtDeparture.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDeparture.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDeparture.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDeparture.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDeparture.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDeparture.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDeparture.ForeColor = System.Drawing.Color.Black;
+            this.txtDeparture.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDeparture.Location = new System.Drawing.Point(354, 254);
+            this.txtDeparture.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDeparture.Name = "txtDeparture";
+            this.txtDeparture.PasswordChar = '\0';
+            this.txtDeparture.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtDeparture.PlaceholderText = "Lahore";
+            this.txtDeparture.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtDeparture.SelectedText = "";
+            this.txtDeparture.Size = new System.Drawing.Size(307, 29);
+            this.txtDeparture.TabIndex = 21;
+            this.txtDeparture.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -275,32 +276,33 @@
             this.guna2Shapes1.Text = "guna2Shapes1";
             this.guna2Shapes1.Zoom = 80;
             // 
-            // product_txtbox
+            // txtVehicle
             // 
-            this.product_txtbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.product_txtbox.BorderColor = System.Drawing.Color.White;
-            this.product_txtbox.BorderThickness = 0;
-            this.product_txtbox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.product_txtbox.DefaultText = "";
-            this.product_txtbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.product_txtbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.product_txtbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.product_txtbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.product_txtbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.product_txtbox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.product_txtbox.ForeColor = System.Drawing.Color.Black;
-            this.product_txtbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.product_txtbox.Location = new System.Drawing.Point(350, 94);
-            this.product_txtbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.product_txtbox.Name = "product_txtbox";
-            this.product_txtbox.PasswordChar = '\0';
-            this.product_txtbox.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.product_txtbox.PlaceholderText = "Mazda";
-            this.product_txtbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.product_txtbox.SelectedText = "";
-            this.product_txtbox.Size = new System.Drawing.Size(307, 29);
-            this.product_txtbox.TabIndex = 15;
-            this.product_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtVehicle.AccessibleName = "txtDriverName";
+            this.txtVehicle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtVehicle.BorderColor = System.Drawing.Color.White;
+            this.txtVehicle.BorderThickness = 0;
+            this.txtVehicle.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtVehicle.DefaultText = "";
+            this.txtVehicle.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtVehicle.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtVehicle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtVehicle.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtVehicle.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtVehicle.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtVehicle.ForeColor = System.Drawing.Color.Black;
+            this.txtVehicle.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtVehicle.Location = new System.Drawing.Point(350, 94);
+            this.txtVehicle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtVehicle.Name = "txtVehicle";
+            this.txtVehicle.PasswordChar = '\0';
+            this.txtVehicle.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtVehicle.PlaceholderText = "Mazda";
+            this.txtVehicle.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtVehicle.SelectedText = "";
+            this.txtVehicle.Size = new System.Drawing.Size(307, 29);
+            this.txtVehicle.TabIndex = 15;
+            this.txtVehicle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Transportation_Control
             // 
@@ -321,15 +323,15 @@
         private Guna.UI2.WinForms.Guna2Button Confirm_btn;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes5;
-        private Guna.UI2.WinForms.Guna2TextBox quantity_txtbox;
+        private Guna.UI2.WinForms.Guna2TextBox txtArrival;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes4;
-        private Guna.UI2.WinForms.Guna2TextBox prate_txtbox;
+        private Guna.UI2.WinForms.Guna2TextBox txtDriver;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes3;
-        private Guna.UI2.WinForms.Guna2TextBox sale_rate_txtbox;
+        private Guna.UI2.WinForms.Guna2TextBox txtDeparture;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
-        private Guna.UI2.WinForms.Guna2TextBox product_txtbox;
+        private Guna.UI2.WinForms.Guna2TextBox txtVehicle;
     }
 }
