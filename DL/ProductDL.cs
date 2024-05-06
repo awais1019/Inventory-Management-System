@@ -15,6 +15,24 @@ namespace Inventory_Management_System.DL
     {
         public static List<Product> products = new List<Product>();
         public static List<Product> cartList = new List<Product>();
+        public static List<Product> getLowQuantityProduct()
+        {
+            List<Product> newList = new List<Product>();
+            foreach (Product product in products)
+            {
+                if (product.Quantity < product.ThresholdQuantity) newList.Add(product);
+            }
+            return newList;
+        }
+        public static decimal getTotalCost()
+        {
+            decimal total = 0;
+            foreach (Product p in products)
+            {
+                total += p.Quantity * p.PurchaseRate;
+            }
+            return total;
+        }
         public static bool isAlreadyIntoCartList(Product p)
         {
             for (int i = 0;i < cartList.Count; i++)

@@ -113,5 +113,16 @@ namespace Inventory_Management_System.DL
             }
         }
 
+
+        public static decimal getTotalSales()
+        {
+            decimal totalSales = 0;
+            foreach(Dispatch d in dispatches)
+            {
+                totalSales += d.TotalAmount;
+            }
+            return totalSales;
+        }
+
     }
 }

@@ -21,7 +21,7 @@ namespace Inventory_Management_System.UserControls
         {
 
         }
-        private void setvalues(string name,string category,string manufacturer,string type,int qunatity,DateTime time)
+        public void setvalues(string name,string category,string manufacturer,string type,int qunatity,DateTime time)
         {
             label16.Text = name;
             label17.Text = category;
