@@ -99,6 +99,9 @@ namespace Inventory_Management_System.UserControls
 
         private void Add_Product_btn_Click(object sender, EventArgs e)
         {
+            Loadbtn.Visible = false;
+            nextBtn.Visible= false;
+            prevBtn.Visible= false;
             Add_Products add_Products = new Add_Products();
             back_btn.Visible = true;
             Add_Product_btn.Visible = false;
@@ -174,6 +177,9 @@ namespace Inventory_Management_System.UserControls
 
         private void back_btn_Click(object sender, EventArgs e)
         {
+            Loadbtn.Visible = true;
+            nextBtn.Visible = true;
+            prevBtn.Visible = true;
             panel2.Controls.Clear();
             panel2.Controls.Add(GridProduct);
             back_btn.Visible = false;

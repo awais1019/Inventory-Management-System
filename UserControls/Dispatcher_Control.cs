@@ -169,6 +169,9 @@ namespace Inventory_Management_System
 
         private void Check_Cart_btn_Click_1(object sender, EventArgs e)
         {
+            Loadbtn.Visible = false;
+            nextBtn.Visible = false;
+            prevBtn.Visible = false;
             back_btn.Visible = true;
             searchbox.Visible = false;
             panel2.Controls.Clear();
@@ -185,6 +188,9 @@ namespace Inventory_Management_System
 
         private void back_btn_Click_1(object sender, EventArgs e)
         {
+            Loadbtn.Visible = true;
+            nextBtn.Visible = true;
+            prevBtn.Visible = true;
             searchbox.Visible = true;
             panel2.Controls.Clear();
             panel2.Controls.Add(GridProduct);
