@@ -94,6 +94,7 @@ namespace Inventory_Management_System.DL
                 int insertedProductId = Convert.ToInt32(command.Parameters["@ProductId"].Value);
                 p.ProductID = insertedProductId;
                 products.Add(p);
+                return insertedProductId;
                
             }
             catch (Exception ex)

@@ -71,3 +71,11 @@ D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory_Management_
 D:\DB-Theory-Project\Inventory Management System\obj\Debug\Inventory_Management_System.UserControls.Threshold_Card.resources
 D:\DataBase\Inventory-Management-System\obj\Debug\Inventory_Management_System.UserControls.Product_Movement_Card.resources
 D:\DataBase\Inventory-Management-System\obj\Debug\Inventory_Management_System.UserControls.Threshold_Card.resources
+D:\Fourth Semster\Database\Theory\Final_Project\Inventory-Management-System\obj\Debug\Inventory_Management_System.UserControls.Add_Block_Control.resources
+D:\Fourth Semster\Database\Theory\Final_Project\Inventory-Management-System\obj\Debug\Inventory_Management_System.UserControls.Add_Shelf_Control.resources
+D:\Fourth Semster\Database\Theory\Final_Project\Inventory-Management-System\obj\Debug\Inventory_Management_System.UserControls.Cart_Control.resources
+D:\Fourth Semster\Database\Theory\Final_Project\Inventory-Management-System\obj\Debug\Inventory_Management_System.UserControls.History_Control.resources
+D:\Fourth Semster\Database\Theory\Final_Project\Inventory-Management-System\obj\Debug\Inventory_Management_System.UserControls.Product_Movement_Card.resources
+D:\Fourth Semster\Database\Theory\Final_Project\Inventory-Management-System\obj\Debug\Inventory_Management_System.UserControls.Storage_Control.resources
+D:\Fourth Semster\Database\Theory\Final_Project\Inventory-Management-System\obj\Debug\Inventory_Management_System.UserControls.Threshold_Card.resources
+D:\Fourth Semster\Database\Theory\Final_Project\Inventory-Management-System\obj\Debug\Inventory_Management_System.UserControls.Transportation_Control.resources

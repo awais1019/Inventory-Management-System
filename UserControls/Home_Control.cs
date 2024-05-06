@@ -75,9 +75,14 @@ namespace Inventory_Management_System.UserControls
             List<ProductMovement> recentMovements = ProductMovementDL.productMovements
                 .Where(d => d.movementTime.Date == mostRecentDate)
                 .ToList();
-
+            int len = recentMovements.Count;
+            int end = len - 20;
+            if (len < 20)
+            {
+                end = 0;
+            }
             // Sort the unique dates
-            for (int i = 0; i < recentMovements.Count; i++)
+            for (int i = len-1; i >= end; i--)
             {
                 Product_Movement_Card card1=new Product_Movement_Card();
                 Product p = ProductDL.getProduct(recentMovements[i].productID);
@@ -96,6 +101,11 @@ namespace Inventory_Management_System.UserControls
         }
 
         private void lbl_total_products_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -228,11 +228,11 @@
             // 
             this.lbl_total_cost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_total_cost.AutoSize = true;
-            this.lbl_total_cost.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_total_cost.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_total_cost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
             this.lbl_total_cost.Location = new System.Drawing.Point(84, 64);
             this.lbl_total_cost.Name = "lbl_total_cost";
-            this.lbl_total_cost.Size = new System.Drawing.Size(107, 37);
+            this.lbl_total_cost.Size = new System.Drawing.Size(94, 32);
             this.lbl_total_cost.TabIndex = 24;
             this.lbl_total_cost.Text = "27000";
             // 
@@ -287,11 +287,11 @@
             // 
             this.lbl_total_sale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_total_sale.AutoSize = true;
-            this.lbl_total_sale.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_total_sale.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_total_sale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
             this.lbl_total_sale.Location = new System.Drawing.Point(84, 64);
             this.lbl_total_sale.Name = "lbl_total_sale";
-            this.lbl_total_sale.Size = new System.Drawing.Size(87, 37);
+            this.lbl_total_sale.Size = new System.Drawing.Size(78, 32);
             this.lbl_total_sale.TabIndex = 24;
             this.lbl_total_sale.Text = "1800";
             // 
@@ -590,6 +590,7 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(721, 315);
             this.flowLayoutPanel2.TabIndex = 2;
+            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
             // tableLayoutPanel2
             // 

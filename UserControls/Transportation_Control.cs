@@ -72,12 +72,12 @@ namespace Inventory_Management_System.UserControls
                     }
                     ProductDL.UpdateProductIntoDB(p);
                     ProductMovement pm = new ProductMovement(p.ProductID, quantityToRemove, "OUT", DateTime.Now);
-                    ProductMovementDL.addIntoList(pm);
+                    //ProductMovementDL.addIntoList(pm);
                     ProductMovementDL.addIntoDB(pm);
                 }
                 DispatchDL.updateIntoList(did, totalAmount);
                 DispatchDL.updateIntoDB(did, totalAmount);
-
+                MessageBox.Show("Product Dispatched Successfully");
             }
         }
     }

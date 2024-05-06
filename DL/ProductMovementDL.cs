@@ -32,6 +32,7 @@ namespace Inventory_Management_System.DL
                 command.ExecuteNonQuery();
                 int id = Convert.ToInt32(command.Parameters["@MovementID"].Value);
                 pm.movementID = id;
+           
                 productMovements.Add(pm);
                 
             }

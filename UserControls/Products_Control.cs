@@ -15,20 +15,33 @@ namespace Inventory_Management_System.UserControls
     public partial class Products_Control : UserControl
     {
         public int shelfId;
+        private int currentPage = 1;
+        private int pageSize = 20;
         public Products_Control()
         {
             InitializeComponent();
-            setDataGridViewDataSource();
             setProductCount();
         }
         private void setProductCount()
         {
             count_students_label.Text = ProductDL.products.Count.ToString();
         }
-        private void setDataGridViewDataSource()
+
+        
+
+        private async Task LoadProductsAsync(int page)
         {
-            foreach (var product in ProductDL.products)
+            // Clear existing rows before loading new data
+            GridProduct.Rows.Clear();
+
+            // Calculate the index range for the current page
+            int startIndex = (page - 1) * pageSize;
+            int endIndex = Math.Min(startIndex + pageSize, ProductDL.products.Count);
+
+            // Iterate over products for the current page
+            for (int i = startIndex; i < endIndex; i++)
             {
+                var product = ProductDL.products[i];
                 int rowIndex = GridProduct.Rows.Add(); // Add a new row
 
                 // Set the values of cells in the new row
@@ -36,11 +49,15 @@ namespace Inventory_Management_System.UserControls
                 GridProduct.Rows[rowIndex].Cells["PurchaseRate"].Value = product.PurchaseRate;
                 GridProduct.Rows[rowIndex].Cells["SellRate"].Value = product.SellRate;
                 GridProduct.Rows[rowIndex].Cells["ProductQuantity"].Value = product.Quantity;
-                ProductCategory cat = CategoryDL.getCategory(product.CategoryID);
+
+                // Fetch category asynchronously
+                var cat = await Task.Run(() => CategoryDL.getCategory(product.CategoryID));
                 GridProduct.Rows[rowIndex].Cells["ProductCategory"].Value = cat.CategoryName;
-                Manufacturer man = ManufacturerDL.getManufacturer(product.ManufacturerID);
-                
+
+                // Fetch manufacturer asynchronously
+                var man = await Task.Run(() => ManufacturerDL.getManufacturer(product.ManufacturerID));
                 GridProduct.Rows[rowIndex].Cells["ProductManufacturer"].Value = man.CompanyName;
+
                 GridProduct.Rows[rowIndex].Cells["ProductId"].Value = product.ProductID;
 
                 // Apply cell styling
@@ -48,13 +65,33 @@ namespace Inventory_Management_System.UserControls
                 cellStyle.BackColor = Color.White;
                 cellStyle.ForeColor = Color.FromArgb(0, 118, 212);
                 cellStyle.Font = new System.Drawing.Font("Arial", 10, FontStyle.Italic);
+
                 foreach (DataGridViewCell cell in GridProduct.Rows[rowIndex].Cells)
                 {
                     cell.Style.ApplyStyle(cellStyle);
                 }
-
             }
         }
+
+        private async Task NextPageAsync()
+        {
+            currentPage++;
+            await LoadProductsAsync(currentPage);
+        }
+
+        private async Task PreviousPageAsync()
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                await LoadProductsAsync(currentPage);
+            }
+        }
+
+       
+        
+
+
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -69,7 +106,7 @@ namespace Inventory_Management_System.UserControls
             add_Products.Dock = DockStyle.Fill;
             searchbox.Visible = false;
             Delete_Product.Visible = false;
-            btnUpdate.Visible = false;
+            //btnUpdate.Visible = false;
             panel2.Controls.Add(add_Products);
    
 
@@ -143,7 +180,7 @@ namespace Inventory_Management_System.UserControls
             Add_Product_btn.Visible = true;
             searchbox.Visible = true;
             Delete_Product.Visible = true;
-            btnUpdate.Visible = true;
+            //btnUpdate.Visible = true;
 
 
         }
@@ -160,13 +197,34 @@ namespace Inventory_Management_System.UserControls
                 add_Products.Dock = DockStyle.Fill;
                 searchbox.Visible = false;
                 Delete_Product.Visible = false;
-                btnUpdate.Visible = false;
+                //btnUpdate.Visible = false;
                 panel2.Controls.Add(add_Products);
             }
             else
             {
                 MessageBox.Show("Select Only one product to update!");
             }
+        }
+
+        private void GridProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private async void Loadbtn_Click(object sender, EventArgs e)
+        {
+            currentPage = 1; // Reset to first page
+            await LoadProductsAsync(currentPage);
+        }
+
+        private async void nextBtn_Click(object sender, EventArgs e)
+        {
+            await NextPageAsync();
+        }
+
+        private async void prevBtn_Click(object sender, EventArgs e)
+        {
+            await PreviousPageAsync();
         }
     }
 }
