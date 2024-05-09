@@ -31,37 +31,39 @@ namespace Inventory_Management_System
             
         }
 
-       
+
 
         private async Task LoadProducts(int page)
         {
             // Clear existing rows before loading new data
             GridProduct.Rows.Clear();
 
-            // Filter products based on quantity and calculate the index range for the current page
-            var filteredProducts = ProductDL.products.Where(product => product.Quantity > 0);
+            // Calculate the index range for the current page
             int startIndex = (page - 1) * pageSize;
-            int endIndex = Math.Min(startIndex + pageSize, filteredProducts.Count());
+            int endIndex = Math.Min(startIndex + pageSize, ProductDL.products.Count);
 
             // Iterate over products for the current page
             for (int i = startIndex; i < endIndex; i++)
             {
-                var product = filteredProducts.ElementAt(i);
+                var product = ProductDL.products[i];
                 int rowIndex = GridProduct.Rows.Add(); // Add a new row
 
                 // Set the values of cells in the new row
-                GridProduct.Rows[rowIndex].Cells["productName"].Value = product.ProductName;
-                GridProduct.Rows[rowIndex].Cells["purchaseRate"].Value = product.PurchaseRate;
-                GridProduct.Rows[rowIndex].Cells["sellRate"].Value = product.SellRate;
-                GridProduct.Rows[rowIndex].Cells["quantity"].Value = product.Quantity;
+                GridProduct.Rows[rowIndex].Cells["ProductName"].Value = product.ProductName;
+                GridProduct.Rows[rowIndex].Cells["PurchaseRate"].Value = product.PurchaseRate;
+                GridProduct.Rows[rowIndex].Cells["SellRate"].Value = product.SellRate;
+                GridProduct.Rows[rowIndex].Cells["Quantity"].Value = product.Quantity;
 
-                // Fetch category and manufacturer
-                ProductCategory cat = CategoryDL.getCategory(product.CategoryID);
-                Manufacturer man = ManufacturerDL.getManufacturer(product.ManufacturerID);
+                // Fetch category asynchronously
+                var catTask = Task.Run(() => CategoryDL.getCategory(product.CategoryID));
+                // Fetch manufacturer asynchronously
+                var manTask = Task.Run(() => ManufacturerDL.getManufacturer(product.ManufacturerID));
 
-                // Set category, manufacturer, and product ID
-                GridProduct.Rows[rowIndex].Cells["category"].Value = cat.CategoryName;
-                GridProduct.Rows[rowIndex].Cells["manufacturer"].Value = man.CompanyName;
+                await Task.WhenAll(catTask, manTask); // Wait for both tasks to complete
+
+                GridProduct.Rows[rowIndex].Cells["Category"].Value = catTask.Result.CategoryName;
+                GridProduct.Rows[rowIndex].Cells["Manufacturer"].Value = manTask.Result.CompanyName;
+
                 GridProduct.Rows[rowIndex].Cells["ProductId"].Value = product.ProductID;
 
                 // Apply cell styling
