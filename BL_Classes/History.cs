@@ -11,23 +11,17 @@ namespace Inventory_Management_System.BL_Classes
         public string name {  get; set; }
         public decimal price { get; set; }
         public int quantity { get; set; }
-        public decimal totalPrice
-        {
-            get
-            {
-                return quantity * price;
-            }
-        }
-
+        public decimal totalPrice { get; set; }
         public string category { get; set; }
         public string manufacturer { get; set; }
 
         public History() { }
-        public History(string name, decimal price, int quantity, string category, string manufacturer)
+        public History(string name, decimal price, int quantity, decimal totalPrice, string category, string manufacturer)
         {
             this.name = name;
             this.price = price;
             this.quantity = quantity;
+            this.totalPrice = totalPrice;
             this.category = category;
             this.manufacturer = manufacturer;
         }

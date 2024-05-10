@@ -122,7 +122,7 @@ namespace Inventory_Management_System.UserControls
             decimal totalPrice = decimal.Parse(GridHistory.SelectedRows[0].Cells[3].Value.ToString());
             string category = GridHistory.SelectedRows[0].Cells[4].Value.ToString();
             string manufacturer = GridHistory.SelectedRows[0].Cells[5].Value.ToString();
-            History his = new History(name, price, quantity, category, manufacturer);
+            History his = new History(name, price, quantity, totalPrice, category, manufacturer);
             if(his != null )
             {
                 try
