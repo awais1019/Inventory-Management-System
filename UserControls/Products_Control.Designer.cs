@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Products_Control));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Products_Control));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.prevBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.nextBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.Loadbtn = new Guna.UI2.WinForms.Guna2Button();
             this.back_btn = new Guna.UI2.WinForms.Guna2Button();
             this.searchbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.Delete_Product = new Guna.UI2.WinForms.Guna2Button();
@@ -52,9 +55,6 @@
             this.status_bar_panel = new System.Windows.Forms.Panel();
             this.count_students_label = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.Loadbtn = new Guna.UI2.WinForms.Guna2Button();
-            this.nextBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.prevBtn = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridProduct)).BeginInit();
@@ -77,6 +77,69 @@
             this.panel1.Size = new System.Drawing.Size(834, 62);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // prevBtn
+            // 
+            this.prevBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.prevBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.prevBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.prevBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.prevBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.prevBtn.FillColor = System.Drawing.Color.White;
+            this.prevBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.prevBtn.ForeColor = System.Drawing.Color.Black;
+            this.prevBtn.Image = ((System.Drawing.Image)(resources.GetObject("prevBtn.Image")));
+            this.prevBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.prevBtn.ImageSize = new System.Drawing.Size(18, 18);
+            this.prevBtn.Location = new System.Drawing.Point(550, 17);
+            this.prevBtn.Name = "prevBtn";
+            this.prevBtn.Size = new System.Drawing.Size(138, 37);
+            this.prevBtn.TabIndex = 66;
+            this.prevBtn.Text = "Previous";
+            this.prevBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.prevBtn.Click += new System.EventHandler(this.prevBtn_Click);
+            // 
+            // nextBtn
+            // 
+            this.nextBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.nextBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.nextBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.nextBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.nextBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.nextBtn.FillColor = System.Drawing.Color.White;
+            this.nextBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.nextBtn.ForeColor = System.Drawing.Color.Black;
+            this.nextBtn.Image = ((System.Drawing.Image)(resources.GetObject("nextBtn.Image")));
+            this.nextBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.nextBtn.ImageSize = new System.Drawing.Size(18, 18);
+            this.nextBtn.Location = new System.Drawing.Point(448, 15);
+            this.nextBtn.Name = "nextBtn";
+            this.nextBtn.Size = new System.Drawing.Size(136, 37);
+            this.nextBtn.TabIndex = 65;
+            this.nextBtn.Text = "Next";
+            this.nextBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.nextBtn.Click += new System.EventHandler(this.nextBtn_Click);
+            // 
+            // Loadbtn
+            // 
+            this.Loadbtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Loadbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Loadbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Loadbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Loadbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Loadbtn.FillColor = System.Drawing.Color.White;
+            this.Loadbtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Loadbtn.ForeColor = System.Drawing.Color.Black;
+            this.Loadbtn.Image = ((System.Drawing.Image)(resources.GetObject("Loadbtn.Image")));
+            this.Loadbtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Loadbtn.ImageSize = new System.Drawing.Size(18, 18);
+            this.Loadbtn.Location = new System.Drawing.Point(346, 17);
+            this.Loadbtn.Name = "Loadbtn";
+            this.Loadbtn.Size = new System.Drawing.Size(96, 37);
+            this.Loadbtn.TabIndex = 64;
+            this.Loadbtn.Text = "Load";
+            this.Loadbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Loadbtn.Click += new System.EventHandler(this.Loadbtn_Click);
             // 
             // back_btn
             // 
@@ -368,69 +431,6 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Total Products:";
             this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // Loadbtn
-            // 
-            this.Loadbtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Loadbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Loadbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Loadbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Loadbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Loadbtn.FillColor = System.Drawing.Color.White;
-            this.Loadbtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Loadbtn.ForeColor = System.Drawing.Color.Black;
-            this.Loadbtn.Image = ((System.Drawing.Image)(resources.GetObject("Loadbtn.Image")));
-            this.Loadbtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Loadbtn.ImageSize = new System.Drawing.Size(18, 18);
-            this.Loadbtn.Location = new System.Drawing.Point(346, 17);
-            this.Loadbtn.Name = "Loadbtn";
-            this.Loadbtn.Size = new System.Drawing.Size(96, 37);
-            this.Loadbtn.TabIndex = 64;
-            this.Loadbtn.Text = "Load";
-            this.Loadbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Loadbtn.Click += new System.EventHandler(this.Loadbtn_Click);
-            // 
-            // nextBtn
-            // 
-            this.nextBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nextBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.nextBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.nextBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.nextBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.nextBtn.FillColor = System.Drawing.Color.White;
-            this.nextBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.nextBtn.ForeColor = System.Drawing.Color.Black;
-            this.nextBtn.Image = ((System.Drawing.Image)(resources.GetObject("nextBtn.Image")));
-            this.nextBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.nextBtn.ImageSize = new System.Drawing.Size(18, 18);
-            this.nextBtn.Location = new System.Drawing.Point(448, 15);
-            this.nextBtn.Name = "nextBtn";
-            this.nextBtn.Size = new System.Drawing.Size(136, 37);
-            this.nextBtn.TabIndex = 65;
-            this.nextBtn.Text = "Next";
-            this.nextBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.nextBtn.Click += new System.EventHandler(this.nextBtn_Click);
-            // 
-            // prevBtn
-            // 
-            this.prevBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.prevBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.prevBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.prevBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.prevBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.prevBtn.FillColor = System.Drawing.Color.White;
-            this.prevBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.prevBtn.ForeColor = System.Drawing.Color.Black;
-            this.prevBtn.Image = ((System.Drawing.Image)(resources.GetObject("prevBtn.Image")));
-            this.prevBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.prevBtn.ImageSize = new System.Drawing.Size(18, 18);
-            this.prevBtn.Location = new System.Drawing.Point(550, 17);
-            this.prevBtn.Name = "prevBtn";
-            this.prevBtn.Size = new System.Drawing.Size(138, 37);
-            this.prevBtn.TabIndex = 66;
-            this.prevBtn.Text = "Previous";
-            this.prevBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.prevBtn.Click += new System.EventHandler(this.prevBtn_Click);
             // 
             // Products_Control
             // 

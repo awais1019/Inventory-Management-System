@@ -36,6 +36,13 @@
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>C:\Users\user\Videos\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Dapper.2.1.35\lib\net461\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
@@ -45,6 +52,7 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +68,7 @@
     <Compile Include="BL_Classes\DatabaseManager.cs" />
     <Compile Include="BL_Classes\Dispatch.cs" />
     <Compile Include="BL_Classes\DispatchDetail.cs" />
+    <Compile Include="BL_Classes\History.cs" />
     <Compile Include="BL_Classes\Manufacturer.cs" />
     <Compile Include="BL_Classes\Product.cs" />
     <Compile Include="BL_Classes\ProductCategory.cs" />
@@ -69,6 +78,12 @@
     <Compile Include="BL_Classes\Storage.cs" />
     <Compile Include="BL_Classes\Transportation.cs" />
     <Compile Include="BL_Classes\Warehouse.cs" />
+    <Compile Include="DispatchedProducts_CrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DispatchedProducts_CrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DL\BlockDL.cs" />
     <Compile Include="DL\DispatchDetailDL.cs" />
     <Compile Include="DL\DispatchDL.cs" />
@@ -77,6 +92,12 @@
     <Compile Include="DL\ShelfDL.cs" />
     <Compile Include="DL\TransportationDL.cs" />
     <Compile Include="DL\WarehouseDL.cs" />
+    <Compile Include="Print_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print_Report.Designer.cs">
+      <DependentUpon>Print_Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Dispatcher_Control.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -172,6 +193,13 @@
     <Compile Include="UserControls\Transportation_Control.Designer.cs">
       <DependentUpon>Transportation_Control.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DispatchedProducts_CrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DispatchedProducts_CrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print_Report.resx">
+      <DependentUpon>Print_Report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Dispatcher_Control.resx">
       <DependentUpon>Dispatcher_Control.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +286,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-records-64 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

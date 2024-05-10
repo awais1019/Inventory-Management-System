@@ -229,7 +229,7 @@
             this.show_btn.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.show_btn.ForeColor = System.Drawing.Color.Black;
             this.show_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.show_btn.Location = new System.Drawing.Point(404, 11);
+            this.show_btn.Location = new System.Drawing.Point(412, 11);
             this.show_btn.Name = "show_btn";
             this.show_btn.Size = new System.Drawing.Size(120, 34);
             this.show_btn.TabIndex = 57;
@@ -261,7 +261,7 @@
             this.AllTime_box.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.AllTime_box.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.AllTime_box.ItemHeight = 30;
-            this.AllTime_box.Location = new System.Drawing.Point(131, 10);
+            this.AllTime_box.Location = new System.Drawing.Point(143, 5);
             this.AllTime_box.Name = "AllTime_box";
             this.AllTime_box.Size = new System.Drawing.Size(256, 36);
             this.AllTime_box.TabIndex = 0;

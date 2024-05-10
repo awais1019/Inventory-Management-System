@@ -11,15 +11,21 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dapper;
+using System.Data.SqlClient;
 
 namespace Inventory_Management_System.UserControls
 {
     public partial class History_Control : UserControl
     {
+        public static string connectionString = "Data Source=CH-Hashim;Initial Catalog = Inventory; Integrated Security = True; Encrypt=False";
+        DateTime selectedDate;
+        List<History> history = new List<History>();
         public History_Control()
         {
             InitializeComponent();
             setDateComboBox();
+            AllTime_box.SelectedIndex = -1;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -41,8 +47,8 @@ namespace Inventory_Management_System.UserControls
         private async void show_btn_Click(object sender, EventArgs e)
         {
             string selectedDateStr = AllTime_box.SelectedItem.ToString();
-            DateTime selectedDate = DateTime.Parse(selectedDateStr);
-            List<Dispatch> dispatchesOnSelectedDate = DispatchDL.dispatches.Where(d => d.DispatchDate.Date == selectedDate.Date).ToList();
+            this.selectedDate = DateTime.Parse(selectedDateStr);
+            List<Dispatch> dispatchesOnSelectedDate = DispatchDL.dispatches.Where(d => d.DispatchDate.Date == this.selectedDate.Date).ToList();
             await SetGridDataSource(dispatchesOnSelectedDate);
             report_generate_btn.Enabled = true;
         }
@@ -73,23 +79,29 @@ namespace Inventory_Management_System.UserControls
 
             foreach (var dispatch in dd)
             {
+                History his = new History();
                 int rowIndex = GridHistory.Rows.Add(); // Add a new row
 
                 // Set the values of cells in the new row
                 GridHistory.Rows[rowIndex].Cells["productName"].Value = ProductDL.getProduct(dispatch.ProductID).ProductName;
+                his.name= ProductDL.getProduct(dispatch.ProductID).ProductName;
                 GridHistory.Rows[rowIndex].Cells["productPrice"].Value = dispatch.UnitPrice;
+                his.price = dispatch.UnitPrice;
                 GridHistory.Rows[rowIndex].Cells["productQuantity"].Value = dispatch.Quantity;
+                his.quantity = dispatch.Quantity;
                 GridHistory.Rows[rowIndex].Cells["totalPrice"].Value = dispatch.TotalPrice;
 
                 // Fetch category and manufacturer asynchronously
                 var catTask = Task.Run(() => CategoryDL.getCategory(ProductDL.getProduct(dispatch.ProductID).CategoryID));
+                his.category = CategoryDL.getCategory(ProductDL.getProduct(dispatch.ProductID).CategoryID).CategoryName;
                 var manTask = Task.Run(() => ManufacturerDL.getManufacturer(ProductDL.getProduct(dispatch.ProductID).ManufacturerID));
+                his.manufacturer = ManufacturerDL.getManufacturer(ProductDL.getProduct(dispatch.ProductID).ManufacturerID).CompanyName;
 
                 await Task.WhenAll(catTask, manTask); // Wait for both tasks to complete
 
                 GridHistory.Rows[rowIndex].Cells["category"].Value = catTask.Result.CategoryName;
                 GridHistory.Rows[rowIndex].Cells["manufacturer"].Value = manTask.Result.CompanyName;
-
+                history.Add(his);
                 // Apply cell styling
                 DataGridViewCellStyle cellStyle = new DataGridViewCellStyle();
                 cellStyle.BackColor = Color.White;
@@ -104,7 +116,23 @@ namespace Inventory_Management_System.UserControls
 
         private void report_generate_btn_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT p.ProductName, d.UnitPrice, d.Quantity, c.CategoryName, m.CompanyName FROM DispatchDetail d JOIN" +
+                        " Product p ON d.ProductID = p.ProductID JOIN Category c on c.CategoryID=p.CategoryID join Manufacturer m ON" +
+                        " p.ManufacturerID = m.ManufacturerID join Dispatch on d.DispatchID = Dispatch.DispatchID" +
+                        $" where TransportationID=22";
+                    List<History> list = connection.Query<History>(query, commandType: CommandType.Text).ToList();
+                    using (Print_Report frm = new Print_Report(list[0]))
+                    {
+                        frm.ShowDialog();
+                    }
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            
         }
     }
 }
