@@ -77,6 +77,7 @@ namespace Inventory_Management_System.UserControls
                 }
                 DispatchDL.updateIntoList(did, totalAmount);
                 DispatchDL.updateIntoDB(did, totalAmount);
+                ProductDL.cartList.Clear();
                 MessageBox.Show("Product Dispatched Successfully");
             }
         }

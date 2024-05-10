@@ -79,29 +79,24 @@ namespace Inventory_Management_System.UserControls
 
             foreach (var dispatch in dd)
             {
-                History his = new History();
+                
                 int rowIndex = GridHistory.Rows.Add(); // Add a new row
 
                 // Set the values of cells in the new row
                 GridHistory.Rows[rowIndex].Cells["productName"].Value = ProductDL.getProduct(dispatch.ProductID).ProductName;
-                his.name= ProductDL.getProduct(dispatch.ProductID).ProductName;
                 GridHistory.Rows[rowIndex].Cells["productPrice"].Value = dispatch.UnitPrice;
-                his.price = dispatch.UnitPrice;
                 GridHistory.Rows[rowIndex].Cells["productQuantity"].Value = dispatch.Quantity;
-                his.quantity = dispatch.Quantity;
                 GridHistory.Rows[rowIndex].Cells["totalPrice"].Value = dispatch.TotalPrice;
 
                 // Fetch category and manufacturer asynchronously
                 var catTask = Task.Run(() => CategoryDL.getCategory(ProductDL.getProduct(dispatch.ProductID).CategoryID));
-                his.category = CategoryDL.getCategory(ProductDL.getProduct(dispatch.ProductID).CategoryID).CategoryName;
                 var manTask = Task.Run(() => ManufacturerDL.getManufacturer(ProductDL.getProduct(dispatch.ProductID).ManufacturerID));
-                his.manufacturer = ManufacturerDL.getManufacturer(ProductDL.getProduct(dispatch.ProductID).ManufacturerID).CompanyName;
-
+                
                 await Task.WhenAll(catTask, manTask); // Wait for both tasks to complete
 
                 GridHistory.Rows[rowIndex].Cells["category"].Value = catTask.Result.CategoryName;
                 GridHistory.Rows[rowIndex].Cells["manufacturer"].Value = manTask.Result.CompanyName;
-                history.Add(his);
+                
                 // Apply cell styling
                 DataGridViewCellStyle cellStyle = new DataGridViewCellStyle();
                 cellStyle.BackColor = Color.White;
@@ -129,12 +124,10 @@ namespace Inventory_Management_System.UserControls
                 {
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
-                        string query = "SELECT p.ProductName, d.UnitPrice, d.Quantity, c.CategoryName, m.CompanyName FROM DispatchDetail d JOIN" +
-                            " Product p ON d.ProductID = p.ProductID JOIN Category c on c.CategoryID=p.CategoryID join Manufacturer m ON" +
-                            " p.ManufacturerID = m.ManufacturerID join Dispatch on d.DispatchID = Dispatch.DispatchID" +
-                            $" where TransportationID=22";
-                        List<History> list = connection.Query<History>(query, commandType: CommandType.Text).ToList();
-                        using (Print_Report frm = new Print_Report(list[0]))
+                        string query = "declare @tid int; set @tid = (select dispatch.TransportationID from Dispatch join DispatchDetail on Dispatch.DispatchID=DispatchDetail.DispatchID join Product on DispatchDetail.ProductID=Product.ProductID where Product.ProductName=" + $"'{name}'); select * from Transportation where TransportationID = @tid;";
+
+                        List<Transportation> list = connection.Query<Transportation>(query, commandType: CommandType.Text).ToList();
+                        using (Print_Report frm = new Print_Report(his, list))
                         {
                             frm.ShowDialog();
                         }

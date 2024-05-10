@@ -78,12 +78,6 @@
     <Compile Include="BL_Classes\Storage.cs" />
     <Compile Include="BL_Classes\Transportation.cs" />
     <Compile Include="BL_Classes\Warehouse.cs" />
-    <Compile Include="CrystalReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="DispatchedProducts_CrystalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -199,10 +193,6 @@
     <Compile Include="UserControls\Transportation_Control.Designer.cs">
       <DependentUpon>Transportation_Control.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="DispatchedProducts_CrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DispatchedProducts_CrystalReport.cs</LastGenOutput>
