@@ -116,23 +116,32 @@ namespace Inventory_Management_System.UserControls
 
         private void report_generate_btn_Click(object sender, EventArgs e)
         {
-            try
+            string name = GridHistory.SelectedRows[0].Cells[0].Value.ToString();
+            decimal price = decimal.Parse(GridHistory.SelectedRows[0].Cells[1].Value.ToString());
+            int quantity = int.Parse(GridHistory.SelectedRows[0].Cells[2].Value.ToString());
+            decimal totalPrice = decimal.Parse(GridHistory.SelectedRows[0].Cells[3].Value.ToString());
+            string category = GridHistory.SelectedRows[0].Cells[4].Value.ToString();
+            string manufacturer = GridHistory.SelectedRows[0].Cells[5].Value.ToString();
+            History his = new History(name, price, quantity, category, manufacturer);
+            if(his != null )
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                try
                 {
-                    string query = "SELECT p.ProductName, d.UnitPrice, d.Quantity, c.CategoryName, m.CompanyName FROM DispatchDetail d JOIN" +
-                        " Product p ON d.ProductID = p.ProductID JOIN Category c on c.CategoryID=p.CategoryID join Manufacturer m ON" +
-                        " p.ManufacturerID = m.ManufacturerID join Dispatch on d.DispatchID = Dispatch.DispatchID" +
-                        $" where TransportationID=22";
-                    List<History> list = connection.Query<History>(query, commandType: CommandType.Text).ToList();
-                    using (Print_Report frm = new Print_Report(list[0]))
+                    using (SqlConnection connection = new SqlConnection(connectionString))
                     {
-                        frm.ShowDialog();
+                        string query = "SELECT p.ProductName, d.UnitPrice, d.Quantity, c.CategoryName, m.CompanyName FROM DispatchDetail d JOIN" +
+                            " Product p ON d.ProductID = p.ProductID JOIN Category c on c.CategoryID=p.CategoryID join Manufacturer m ON" +
+                            " p.ManufacturerID = m.ManufacturerID join Dispatch on d.DispatchID = Dispatch.DispatchID" +
+                            $" where TransportationID=22";
+                        List<History> list = connection.Query<History>(query, commandType: CommandType.Text).ToList();
+                        using (Print_Report frm = new Print_Report(list[0]))
+                        {
+                            frm.ShowDialog();
+                        }
                     }
                 }
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
-            
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
+            }           
         }
     }
 }

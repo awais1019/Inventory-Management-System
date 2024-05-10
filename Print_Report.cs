@@ -25,7 +25,7 @@ namespace Inventory_Management_System
         private void crystalReportViewer_Load(object sender, EventArgs e)
         {
             //dispatchedProducts_CrystalReport1.SetDataSource(history);
-            dispatchedProducts_CrystalReport1.SetParameterValue("pName", "l");
+            dispatchedProducts_CrystalReport1.SetParameterValue("pName", history1.name);
             dispatchedProducts_CrystalReport1.SetParameterValue("pVehicle", "hello");
             dispatchedProducts_CrystalReport1.SetParameterValue("pdepLocation", "hello");
             dispatchedProducts_CrystalReport1.SetParameterValue("pArrLocation", "hello");

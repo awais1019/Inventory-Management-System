@@ -11,6 +11,14 @@ namespace Inventory_Management_System.BL_Classes
         public string name {  get; set; }
         public decimal price { get; set; }
         public int quantity { get; set; }
+        public decimal totalPrice
+        {
+            get
+            {
+                return quantity * price;
+            }
+        }
+
         public string category { get; set; }
         public string manufacturer { get; set; }
 
